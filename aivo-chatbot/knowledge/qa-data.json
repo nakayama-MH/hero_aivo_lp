@@ -1,0 +1,443 @@
+{
+  "welcome": {
+    "id": "welcome",
+    "type": "message",
+    "text": "HERO AIVOについてのご質問にお答えします。\n\nお知りになりたい内容を選択してください。",
+    "options": [
+      {"id": "service_overview", "label": "サービス概要"},
+      {"id": "pricing", "label": "料金について"},
+      {"id": "features", "label": "強み・特徴"},
+      {"id": "target", "label": "対象となる企業"},
+      {"id": "value", "label": "得られる効果"}
+    ]
+  },
+
+  "service_overview": {
+    "id": "service_overview",
+    "type": "message",
+    "text": "HERO AIVOは、AI検索時代に対応した自走型LP制作サービスです。\n\n従来の広告依存型LPと異なり、LLMO対策により広告費ゼロでも集客できるLPを提供します。",
+    "options": [
+      {"id": "llmo_details", "label": "LLMO対策について詳しく知りたい"},
+      {"id": "service_flow", "label": "サービスの流れを知りたい"},
+      {"id": "difference", "label": "従来のLPとの違いは？"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "llmo_details": {
+    "id": "llmo_details",
+    "type": "message",
+    "text": "LLMO（Large Language Model Optimization）とは、ChatGPTなどのAI検索エンジンに最適化する施策です。\n\nフルスクラッチ開発でAI最適化構造を実装し、構造化データやメタ情報を適切に配置することで、AI検索経由での自然流入を獲得します。",
+    "options": [
+      {"id": "llmo_benefits", "label": "具体的なメリットは？"},
+      {"id": "service_overview", "label": "サービス概要に戻る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "llmo_benefits": {
+    "id": "llmo_benefits",
+    "type": "message",
+    "text": "LLMO対策の主なメリット：\n\n• 広告費をかけずに継続的な集客が可能\n• AI検索エンジンに自社情報が表示される\n• 「作って終わり」ではなく「育つLP」として価値が増加\n• 時間経過とともに集客力が向上",
+    "options": [
+      {"id": "pricing", "label": "料金を確認する"},
+      {"id": "service_overview", "label": "サービス概要に戻る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "service_flow": {
+    "id": "service_flow",
+    "type": "message",
+    "text": "HERO AIVOのサービスフロー：\n\n1. LLMO診断（10,000円）\n   現状サイトをAI視点で分析・スコアリング\n\n2. LP制作・運用（月4-5万円）\n   または HP制作・運用（月30-100万円）\n\n3. 継続運用\n   自社開発ツールでコンテンツ更新",
+    "options": [
+      {"id": "diagnosis_details", "label": "診断について詳しく"},
+      {"id": "pricing", "label": "料金詳細を見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "diagnosis_details": {
+    "id": "diagnosis_details",
+    "type": "message",
+    "text": "LLMO診断サービスは「会社の人間ドック」として、わずか10,000円で現状を可視化します。\n\nソースコードレベルでの深層分析を行い、AI最適化スコアを算出。具体的な改善ポイントを提示し、月次診断で改善過程を追跡できます。",
+    "options": [
+      {"id": "after_diagnosis", "label": "診断後はどうなる？"},
+      {"id": "pricing", "label": "料金を確認する"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "after_diagnosis": {
+    "id": "after_diagnosis",
+    "type": "message",
+    "text": "診断結果をもとに、お客様の予算や状況に応じた提案を行います。\n\nLP制作（月4-5万円）またはHP制作（月30-100万円）のいずれかをご提案。どちらを選んでも、段階的に投資できる安心設計です。",
+    "options": [
+      {"id": "lp_or_hp", "label": "LPとHPの違いは？"},
+      {"id": "pricing", "label": "料金詳細を見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "lp_or_hp": {
+    "id": "lp_or_hp",
+    "type": "message",
+    "text": "LP（ランディングページ）：\n• 1ページ完結型\n• 特定の商品・サービスに特化\n• 制作費10-20万円、月額4-5万円\n\nHP（ホームページ）：\n• 複数ページで企業全体を紹介\n• 総合的なWeb戦略\n• 制作費30-100万円、月額4-5万円",
+    "options": [
+      {"id": "which_better", "label": "どちらがおすすめ？"},
+      {"id": "pricing", "label": "料金を見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "which_better": {
+    "id": "which_better",
+    "type": "message",
+    "text": "まずはLPから始めることをおすすめします。\n\n理由：\n• 初期投資が少ない\n• 効果を早く実感できる\n• LP成功後にHP展開も可能\n• 失敗リスクを最小限に抑えられる",
+    "options": [
+      {"id": "pricing", "label": "料金を確認する"},
+      {"id": "value", "label": "得られる効果を見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "difference": {
+    "id": "difference",
+    "type": "message",
+    "text": "従来のLPとHERO AIVOの違い：\n\n従来のLP：\n• 広告運用前提の設計\n• 広告停止＝集客停止\n• 単発的な投資\n\nHERO AIVO：\n• 広告依存しない自走型\n• 広告費ゼロでも機能\n• 長期的な集客資産",
+    "options": [
+      {"id": "why_different", "label": "なぜそれが可能？"},
+      {"id": "features", "label": "強みを詳しく"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "why_different": {
+    "id": "why_different",
+    "type": "message",
+    "text": "LLMO対策により、AI検索エンジンが自然とあなたの会社を見つけ出すからです。\n\nChatGPTなどのAIが質問に答える際、最適化されたサイトの情報を参照・引用します。これにより、広告費をかけずとも継続的な露出が可能になります。",
+    "options": [
+      {"id": "features", "label": "他の強みも知りたい"},
+      {"id": "value", "label": "効果を確認したい"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "pricing": {
+    "id": "pricing",
+    "type": "message",
+    "text": "HERO AIVOの料金体系をご紹介します。\n\n詳しく知りたい内容を選択してください。",
+    "options": [
+      {"id": "diagnosis_price", "label": "診断サービスの料金"},
+      {"id": "lp_price", "label": "LP制作・運用の料金"},
+      {"id": "hp_price", "label": "HP制作・運用の料金"},
+      {"id": "price_reason", "label": "なぜこの価格？"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "diagnosis_price": {
+    "id": "diagnosis_price",
+    "type": "message",
+    "text": "LLMO診断サービス：10,000円（単発）\n\n「会社の人間ドック」として、現状のWebサイトをAI視点で分析します。\n\nまずはここから始めることで、低リスクでAI時代への第一歩を踏み出せます。",
+    "options": [
+      {"id": "diagnosis_content", "label": "診断の内容は？"},
+      {"id": "lp_price", "label": "LP料金を見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "diagnosis_content": {
+    "id": "diagnosis_content",
+    "type": "message",
+    "text": "診断の内容：\n\n• ソースコードレベルでの深層分析\n• AI最適化スコアリング\n• 具体的な改善ポイントの提示\n• 競合との比較分析\n• 改善施策の優先順位付け",
+    "options": [
+      {"id": "service_flow", "label": "診断後の流れは？"},
+      {"id": "pricing", "label": "料金一覧に戻る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "lp_price": {
+    "id": "lp_price",
+    "type": "message",
+    "text": "LP制作・運用サービス：\n\n制作費：10万円～20万円\n月額運用：4～5万円\n\n含まれる内容：\n• フルスクラッチ開発\n• LLMO対策実装\n• チャットボット標準装備\n• 継続的なコンテンツ更新\n• 月次診断レポート",
+    "options": [
+      {"id": "lp_cost_benefit", "label": "費用対効果は？"},
+      {"id": "hp_price", "label": "HP料金を見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "lp_cost_benefit": {
+    "id": "lp_cost_benefit",
+    "type": "message",
+    "text": "月4-5万円は「広報担当者1人分以下」の投資です。\n\nしかし、LPは24時間365日働き続け、時間とともに価値が増していきます。広告費のように消えていくのではなく、資産として蓄積されます。",
+    "options": [
+      {"id": "value", "label": "具体的な効果を見る"},
+      {"id": "pricing", "label": "料金一覧に戻る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "hp_price": {
+    "id": "hp_price",
+    "type": "message",
+    "text": "HP制作・運用サービス：\n\n新規制作：30万円～100万円\n既存HP修正：10万円～\n月額運用：4～5万円\n\n企業サイト全体をLLMO対応し、複数ページの最適化と継続的な更新・改善を行います。",
+    "options": [
+      {"id": "hp_scope", "label": "対応範囲は？"},
+      {"id": "lp_price", "label": "LP料金を見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "hp_scope": {
+    "id": "hp_scope",
+    "type": "message",
+    "text": "HP制作の対応範囲：\n\n• 企業サイト全体の設計・構築\n• 複数ページのLLMO最適化\n• コンテンツ管理システム導入\n• ブログ・ニュース機能\n• 採用ページ\n• 問い合わせフォーム\n• SEO・LLMO対策",
+    "options": [
+      {"id": "pricing", "label": "料金一覧に戻る"},
+      {"id": "features", "label": "強みを見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "price_reason": {
+    "id": "price_reason",
+    "type": "message",
+    "text": "なぜこの価格で提供できるのか：\n\n• 完全自社開発（外部委託なし）\n• 自社開発ツールで運用効率化\n• 内製化による品質管理\n• 継続的な改善による最適化\n\n結果として、高品質なサービスを適正価格で提供できます。",
+    "options": [
+      {"id": "quality_assurance", "label": "品質は大丈夫？"},
+      {"id": "value", "label": "効果を確認したい"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "quality_assurance": {
+    "id": "quality_assurance",
+    "type": "message",
+    "text": "完全自社開発だからこそ、高品質を保証できます。\n\n• 専任チームによる一貫対応\n• 外部委託によるブレがない\n• 迅速な対応・修正が可能\n• ノウハウが社内に蓄積\n• 長期的なサポート体制",
+    "options": [
+      {"id": "features", "label": "強みを詳しく"},
+      {"id": "pricing", "label": "料金一覧に戻る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "features": {
+    "id": "features",
+    "type": "message",
+    "text": "HERO AIVOの強みをご紹介します。\n\n詳しく知りたい内容を選択してください。",
+    "options": [
+      {"id": "feature_llmo", "label": "LLMO対策による持続的集客"},
+      {"id": "feature_chatbot", "label": "チャットボット標準装備"},
+      {"id": "feature_asset", "label": "資産価値のあるLP"},
+      {"id": "feature_diagnosis", "label": "独自診断ツール"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "feature_llmo": {
+    "id": "feature_llmo",
+    "type": "message",
+    "text": "LLMO対策による持続的集客力：\n\nフルスクラッチ開発でAI最適化構造を実装し、AI検索経由での自然流入を獲得します。\n\n従来のLPは広告停止で集客停止でしたが、HERO AIVOのLPは広告費ゼロでも機能します。",
+    "options": [
+      {"id": "llmo_proof", "label": "実績はある？"},
+      {"id": "features", "label": "他の強みを見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "llmo_proof": {
+    "id": "llmo_proof",
+    "type": "message",
+    "text": "AI検索時代はまさに始まったばかりです。\n\n今から対策を始めることで、先行者利益を獲得できます。ChatGPTの普及により、AI検索は急速に一般化しており、早期対応が競合優位性につながります。",
+    "options": [
+      {"id": "value", "label": "期待できる効果は？"},
+      {"id": "features", "label": "他の強みを見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "feature_chatbot": {
+    "id": "feature_chatbot",
+    "type": "message",
+    "text": "チャットボット標準装備：\n\nオプションではなく全LPに標準実装されます。\n\n• 会話形式でのFAQ対応\n• 24時間365日の自動接客\n• コンバージョン率向上\n• 訪問者の疑問を即座に解決",
+    "options": [
+      {"id": "chatbot_custom", "label": "カスタマイズできる？"},
+      {"id": "features", "label": "他の強みを見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "chatbot_custom": {
+    "id": "chatbot_custom",
+    "type": "message",
+    "text": "はい、チャットボットは完全カスタマイズ可能です。\n\n• 業種・商品に合わせた会話フロー\n• 独自のQ&Aデータ\n• デザインのカスタマイズ\n• 問い合わせフォームへの誘導",
+    "options": [
+      {"id": "features", "label": "他の強みを見る"},
+      {"id": "pricing", "label": "料金を確認する"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "feature_asset": {
+    "id": "feature_asset",
+    "type": "message",
+    "text": "資産価値のあるLP：\n\n• 広告費をかけ続ける必要なし\n• 時間経過とともに価値が増す\n• 複数LP展開で集客網を構築\n• 売却時にも評価される資産\n\nLPが継続的に集客し続ける資産となります。",
+    "options": [
+      {"id": "asset_why", "label": "なぜ資産になる？"},
+      {"id": "features", "label": "他の強みを見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "asset_why": {
+    "id": "asset_why",
+    "type": "message",
+    "text": "LPが資産になる理由：\n\n1. コンテンツの蓄積\n   更新するたびに情報資産が増える\n\n2. AI検索の学習\n   時間とともにAIがサイトを認識\n\n3. ドメインの育成\n   継続運用でドメイン評価が向上\n\n4. 集客の自動化\n   育ったLPは自動で集客",
+    "options": [
+      {"id": "value_long", "label": "長期的な効果は？"},
+      {"id": "features", "label": "他の強みを見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "feature_diagnosis": {
+    "id": "feature_diagnosis",
+    "type": "message",
+    "text": "独自診断ツールによる「不安の可視化」：\n\nソースコードレベルで分析し、スコアリング。「何が悪いか分からない」を「ここが○○点足りない」に変換します。\n\n月次診断で改善過程を数値で追えます。",
+    "options": [
+      {"id": "diagnosis_details", "label": "診断について詳しく"},
+      {"id": "features", "label": "他の強みを見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "target": {
+    "id": "target",
+    "type": "message",
+    "text": "HERO AIVOの対象となる企業：\n\n• 40～60代の経営者・マーケティング責任者\n• デジタル施策への理解はあるが、AI/LLMOは未知の領域\n• 投資判断に慎重で、ROIを重視\n\nこんな課題をお持ちではありませんか？",
+    "options": [
+      {"id": "target_problems", "label": "よくある課題を見る"},
+      {"id": "target_check", "label": "自社に合うか確認したい"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "target_problems": {
+    "id": "target_problems",
+    "type": "message",
+    "text": "よくある企業課題：\n\n• AI対策の必要性は理解しているが、具体的な施策が不明\n• 広告費をかけ続けないと集客できない\n• HP/LPが古く、スマホ・AI対応していない\n• 若年層（AI検索世代）からの流入が減少\n• 何が問題なのか分からない",
+    "options": [
+      {"id": "solution", "label": "どう解決できる？"},
+      {"id": "value", "label": "得られる効果を見る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "solution": {
+    "id": "solution",
+    "type": "message",
+    "text": "HERO AIVOの解決アプローチ：\n\n1. まず診断で現状を可視化\n2. 具体的な改善策を提示\n3. 予算に応じた段階的投資\n4. 継続的なサポートと改善\n\n低リスクで始められ、効果を確認しながら進められます。",
+    "options": [
+      {"id": "service_flow", "label": "サービスの流れを見る"},
+      {"id": "pricing", "label": "料金を確認する"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "target_check": {
+    "id": "target_check",
+    "type": "message",
+    "text": "以下に当てはまる企業様に最適です：\n\n• 従業員数10名以上の中小企業\n• BtoB、BtoC問わず\n• Webからの集客を強化したい\n• 長期的な視点で投資できる\n• デジタル施策に前向き",
+    "options": [
+      {"id": "first_step", "label": "まず何から始めれば？"},
+      {"id": "pricing", "label": "料金を確認する"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "first_step": {
+    "id": "first_step",
+    "type": "message",
+    "text": "まずは10,000円のLLMO診断から始めることをおすすめします。\n\n診断により：\n• 現状の課題が明確に\n• 改善の優先順位がわかる\n• 投資判断の材料が得られる\n• リスクを最小限に抑えられる",
+    "options": [
+      {"id": "diagnosis_price", "label": "診断料金を確認"},
+      {"id": "service_flow", "label": "その後の流れは？"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "value": {
+    "id": "value",
+    "type": "message",
+    "text": "HERO AIVOで得られる効果を期間別にご紹介します。\n\nどの期間の効果を知りたいですか？",
+    "options": [
+      {"id": "value_short", "label": "即効的価値（3ヶ月以内）"},
+      {"id": "value_mid", "label": "中期的価値（6ヶ月～1年）"},
+      {"id": "value_long", "label": "長期的価値（2年以降）"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "value_short": {
+    "id": "value_short",
+    "type": "message",
+    "text": "即効的価値（3ヶ月以内）：\n\n• 自社サイトの課題を数値化・可視化\n• 「AI対策を始めた」という心理的安心感\n• 社内でのデジタル施策推進の根拠獲得\n• 定期的なコンテンツ更新による「生きたサイト」の実現\n• 顧客からの「放置されていない」という安心感",
+    "options": [
+      {"id": "value_mid", "label": "中期的な効果は？"},
+      {"id": "value", "label": "効果一覧に戻る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "value_mid": {
+    "id": "value_mid",
+    "type": "message",
+    "text": "中期的価値（6ヶ月～1年）：\n\n• AI検索での露出向上\n• 若年層からの問い合わせ増加\n• 競合との差別化\n• コンテンツ蓄積による情報資産の形成\n\nAI検索エンジンに最適化されたLPが、徐々に効果を発揮し始めます。",
+    "options": [
+      {"id": "value_long", "label": "長期的な効果は？"},
+      {"id": "value", "label": "効果一覧に戻る"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "value_long": {
+    "id": "value_long",
+    "type": "message",
+    "text": "長期的価値（2年以降）：\n\n• 持続的な集客基盤の確立\n• 顧客獲得コストの削減\n• 市場での先行者ポジション\n• 豊富なコンテンツによる権威性の確立\n• 資産価値のあるデジタル資産の獲得\n\n継続的に価値を生む資産的なサイトとなります。",
+    "options": [
+      {"id": "roi", "label": "投資対効果は？"},
+      {"id": "pricing", "label": "料金を確認する"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "roi": {
+    "id": "roi",
+    "type": "message",
+    "text": "投資対効果（ROI）について：\n\n月4-5万円の投資で：\n• 24時間365日稼働する集客チャネル\n• 広告費ゼロでの継続的な流入\n• 時間とともに増加する資産価値\n• 問い合わせ1件あたりのコスト削減\n\n一般的に6ヶ月～1年で効果を実感できます。",
+    "options": [
+      {"id": "start_now", "label": "今すぐ始めるべき？"},
+      {"id": "pricing", "label": "料金を確認する"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "start_now": {
+    "id": "start_now",
+    "type": "message",
+    "text": "AI検索時代は今まさに始まったばかりです。\n\n早期に対策を始めることで：\n• 先行者利益を獲得\n• 競合との差別化\n• AI検索エンジンへの早期登録\n• ノウハウの蓄積\n\n今始めることで、2-3年後に大きな差が生まれます。",
+    "options": [
+      {"id": "first_step", "label": "何から始めれば？"},
+      {"id": "pricing", "label": "料金を確認する"},
+      {"id": "back_to_main", "label": "メインメニューに戻る"}
+    ]
+  },
+
+  "back_to_main": {
+    "id": "welcome",
+    "type": "redirect"
+  }
+}
