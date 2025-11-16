@@ -55,23 +55,24 @@ export default function ArticleModal() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={`
-            flex items-center justify-center gap-2 px-6 py-3
+            flex items-center justify-center gap-1.5 px-4 py-2
             bg-gradient-to-r from-[#f62a2a] to-[#d91a1a]
-            text-white font-bold rounded-full
-            shadow-lg hover:shadow-xl hover:scale-[1.05]
-            active:scale-[0.98]
-            transition-all duration-300
+            text-white font-semibold rounded-full
+            shadow-md hover:shadow-lg hover:scale-[1.03]
+            active:scale-[0.97]
+            transition-all duration-200
+            backdrop-blur-sm
             ${isOpen ? 'mt-3' : ''}
           `}
           aria-label={isOpen ? 'コラムを閉じる' : 'コラムを開く'}
         >
-          <span className="text-sm sm:text-base">コラム</span>
+          <span className="text-xs sm:text-sm tracking-wide">コラム</span>
           <svg
-            className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+            className={`w-3.5 h-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            strokeWidth={2.5}
+            strokeWidth={3}
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
           </svg>
