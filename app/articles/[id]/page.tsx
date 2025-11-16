@@ -54,12 +54,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="pt-36 md:pt-44 pb-12">
+    <article className="flex-1 bg-white">
+      <div className="pt-24 md:pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
           <Link
             href="/"
-            className="inline-flex items-center text-[#f62a2a] hover:text-[#d92424] mb-8 transition-colors"
+            className="inline-flex items-center text-[#f62a2a] hover:text-[#d92424] mb-8 transition-colors font-medium"
           >
             <svg
               className="w-5 h-5 mr-2"
@@ -77,40 +77,36 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             ホームに戻る
           </Link>
 
-          <article className="bg-white rounded-lg shadow-lg overflow-hidden">
-            {article.eyecatch && (
-              <div className="relative w-full h-64 md:h-96">
-                <Image
-                  src={article.eyecatch.url}
-                  alt={article.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            )}
-
-            <div className="p-6 md:p-12">
-              <time className="text-sm text-gray-500">
-                {new Date(article.publishedAt).toLocaleDateString('ja-JP', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </time>
-
-              <h1 className="text-3xl md:text-4xl font-bold mt-4 mb-8 text-gray-900">
-                {article.title}
-              </h1>
-
-              <div
-                className="prose prose-lg max-w-none"
-                dangerouslySetInnerHTML={{ __html: article.content }}
+          {article.eyecatch && (
+            <div className="relative w-full h-64 md:h-96 mb-8 rounded-xl overflow-hidden">
+              <Image
+                src={article.eyecatch.url}
+                alt={article.title}
+                fill
+                className="object-cover"
+                priority
               />
             </div>
-          </article>
+          )}
+
+          <time className="text-sm text-gray-500 font-medium">
+            {new Date(article.publishedAt).toLocaleDateString('ja-JP', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-12 text-gray-900 leading-tight">
+            {article.title}
+          </h1>
+
+          <div
+            className="prose prose-lg max-w-none prose-headings:scroll-mt-20 prose-a:transition-colors prose-img:shadow-lg"
+            dangerouslySetInnerHTML={{ __html: article.content }}
+          />
         </div>
       </div>
-    </div>
+    </article>
   )
 }

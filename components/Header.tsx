@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useContactModal } from '@/contexts/ContactModalContext'
 
 export default function Header() {
@@ -12,7 +13,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20 px-4 md:px-6">
           {/* 左側：ロゴ */}
           <div className="flex items-center">
-            <div className="relative h-10 md:h-14 w-auto">
+            <Link href="/" className="relative h-10 md:h-14 w-auto hover:opacity-80 transition-opacity">
               <Image
                 src="/HEROAIVO_logo.png"
                 alt="HERO AIVO - AIに選ばれる、企業の見つかる力"
@@ -21,7 +22,7 @@ export default function Header() {
                 className="h-full w-auto object-contain"
                 priority
               />
-            </div>
+            </Link>
           </div>
 
           {/* 右側：無料相談ボタン */}

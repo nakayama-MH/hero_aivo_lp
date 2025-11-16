@@ -3,6 +3,8 @@ import Script from 'next/script'
 import './globals.css'
 import { ContactModalProvider } from '@/contexts/ContactModalContext'
 import ContactModal from '@/components/ContactModal'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'HERO AIVO - AIに選ばれる、企業の見つかる力',
@@ -199,7 +201,11 @@ export default function RootLayout({
       </head>
       <body>
         <ContactModalProvider>
-          {children}
+          <Header />
+          <div className="min-h-screen flex flex-col">
+            {children}
+          </div>
+          <Footer />
           <ContactModal />
         </ContactModalProvider>
 

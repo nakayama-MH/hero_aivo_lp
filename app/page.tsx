@@ -1,5 +1,3 @@
-import Header from '@/components/Header'
-import ArticleBanner from '@/components/ArticleBanner'
 import HeroSection from '@/components/HeroSection'
 import ProblemsSection from '@/components/ProblemsSection'
 import GoalSection from '@/components/GoalSection'
@@ -9,15 +7,13 @@ import FeaturesSection from '@/components/FeaturesSection'
 import FutureTimelineSection from '@/components/FutureTimelineSection'
 import FAQSection from '@/components/FAQSection'
 import CTASection from '@/components/CTASection'
-import Footer from '@/components/Footer'
 import OpeningAnimation from '@/components/OpeningAnimation'
+import ArticleModal from '@/components/ArticleModal'
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <OpeningAnimation />
-      <Header />
-      <ArticleBanner />
       <main className="flex-1">
         <HeroSection />
         <ProblemsSection />
@@ -29,7 +25,7 @@ export default function Home() {
         <FAQSection />
         <CTASection />
       </main>
-      <Footer />
-    </div>
+      <ArticleModal />
+    </>
   )
 }
