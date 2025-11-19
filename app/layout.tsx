@@ -8,12 +8,12 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'HERO AIVO - AIに選ばれる、企業の見つかる力',
-  description: 'AI検索時代に対応した次世代型Webサイト制作・運用サービス。LLMO対策で広告費ゼロでも持続的に集客できる自走型サイトを構築。24時間対応AIチャットボット標準装備。月額4万円で診断から運用まで伴走サポート。',
+  description: 'AI検索時代に対応した次世代型Webサイト制作・運用サービス。LLMO対策で広告費ゼロでも持続的に集客できる自走型サイトを構築。24時間対応AIチャットボット標準装備。LLMO診断5万円から、フルパッケージで継続的な運用サポートを提供。',
 
   // Open Graphタグ
   openGraph: {
     title: 'HERO AIVO - AIに選ばれる、企業の見つかる力',
-    description: 'AI検索時代に対応した次世代型Webサイト制作・運用サービス。LLMO対策で広告費ゼロでも持続的に集客できる自走型サイトを構築。24時間対応AIチャットボット標準装備。月額4万円で診断から運用まで伴走サポート。',
+    description: 'AI検索時代に対応した次世代型Webサイト制作・運用サービス。LLMO対策で広告費ゼロでも持続的に集客できる自走型サイトを構築。24時間対応AIチャットボット標準装備。LLMO診断5万円から、フルパッケージで継続的な運用サポートを提供。',
     url: 'https://hero-aivo.com',
     siteName: 'HERO AIVO',
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'HERO AIVO - AIに選ばれる、企業の見つかる力',
-    description: 'AI検索時代に対応した次世代型Webサイト制作・運用サービス。LLMO対策で広告費ゼロでも持続的に集客できる自走型サイトを構築。24時間対応AIチャットボット標準装備。',
+    description: 'AI検索時代に対応した次世代型Webサイト制作・運用サービス。LLMO対策で広告費ゼロでも持続的に集客できる自走型サイトを構築。LLMO診断5万円から、継続的な運用サポートを提供。',
     images: ['/HEROAIVO_logo.png'],
   },
 
@@ -94,17 +94,40 @@ export default function RootLayout({
       '@type': 'ServiceChannel',
       serviceUrl: 'https://hero-aivo.com',
     },
-    offers: {
-      '@type': 'Offer',
-      price: '40000',
-      priceCurrency: 'JPY',
-      priceSpecification: {
-        '@type': 'UnitPriceSpecification',
-        price: '40000',
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'LLMO診断（単品）',
+        price: '50000',
         priceCurrency: 'JPY',
-        unitText: '月額',
       },
-    },
+      {
+        '@type': 'Offer',
+        name: 'フルパッケージ（年間契約・初年度）',
+        price: '1800000',
+        priceCurrency: 'JPY',
+        description: '初期費用15万円、運用費180万円（前半6ヶ月月額10万円、後半6ヶ月月額20万円）',
+      },
+      {
+        '@type': 'Offer',
+        name: 'フルパッケージ（半年契約）',
+        price: '1100000',
+        priceCurrency: 'JPY',
+        description: '初期費用込み、総額110万円',
+      },
+      {
+        '@type': 'Offer',
+        name: 'フルパッケージ（2年目以降）',
+        price: '200000',
+        priceCurrency: 'JPY',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: '200000',
+          priceCurrency: 'JPY',
+          unitText: '月額',
+        },
+      },
+    ],
     serviceType: 'Webサイト制作・運用サービス',
   }
 
@@ -117,7 +140,7 @@ export default function RootLayout({
         name: '導入費用はいくらですか？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '月額4万円の月次運用費と、初回診断費用1万円が必要です。広告費は一切不要で、契約期間の縛りもありません。',
+          text: 'LLMO診断のみの場合は5万円です。フルパッケージの場合、初期費用15万円（LP制作含む）と運用費が必要です。初年度キャンペーン価格は前半6ヶ月月額10万円、後半6ヶ月月額20万円、2年目以降は月額20万円です。広告費は一切不要です。',
         },
       },
       {
@@ -130,10 +153,10 @@ export default function RootLayout({
       },
       {
         '@type': 'Question',
-        name: '月額4万円で何をしてくれますか？',
+        name: '月次運用サービスには何が含まれますか？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '定期的なコンテンツ作成・入稿（自社開発ツール使用）、月次LLMO診断とスコアリング、サイトの改善提案と実装、AI検索対応の最新情報反映を提供します。',
+          text: '定期的なコンテンツ作成・入稿（自社開発ツール使用）、月次LLMO診断とスコアリング、サイトの改善提案と実装、AI検索対応の最新情報反映、被リンク戦略の実行、年4回の詳細診断レポートを提供します。',
         },
       },
       {

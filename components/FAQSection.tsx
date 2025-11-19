@@ -65,28 +65,50 @@ export default function FAQSection() {
       ),
     },
     {
-      question: '月額4万円は何に使われるのですか？',
+      question: '料金体系について教えてください',
       answer: (
         <>
           <strong>A:</strong>
-          <ul className="list-disc list-inside mt-2 space-y-2">
-            <li>
-              <strong>定期的なコンテンツ作成・入稿</strong>
-              （自社開発ツール使用）
-            </li>
-            <li>
-              <strong>月次LLMO診断</strong>とスコアリング
-            </li>
-            <li>
-              <strong>サイトの改善提案</strong>と実装
-            </li>
-            <li>
-              <strong>AI検索対応</strong>の最新情報反映
-            </li>
-          </ul>
-          <p className="mt-2">
-            「広報1人分以下」の費用で、専門チームが継続的にサイトを育てます。放置されることなく、常に最新のAI対策が施されます。
-          </p>
+          <div className="mt-2 space-y-3">
+            <div>
+              <strong>【LLMO診断のみ】</strong>
+              <ul className="list-disc list-inside mt-1 ml-4">
+                <li>単品価格：5万円</li>
+                <li>AI検索における現状分析と改善提案</li>
+              </ul>
+            </div>
+            <div>
+              <strong>【フルパッケージ】</strong>
+              <ul className="list-disc list-inside mt-1 ml-4 space-y-1">
+                <li>初期費用：15万円（LP制作含む）</li>
+                <li>
+                  <strong>初年度キャンペーン価格：</strong>
+                  <br />
+                  <span className="ml-4">前半6ヶ月 月額10万円、後半6ヶ月 月額20万円</span>
+                  <br />
+                  <span className="ml-4">年間合計180万円（初期費用別）</span>
+                  <br />
+                  <span className="ml-4 text-sm">※一括払いの場合180万円</span>
+                </li>
+                <li>
+                  <strong>2年目以降：</strong>月額20万円
+                </li>
+                <li>
+                  <strong>半年契約：</strong>総額110万円（初期費用込み）
+                </li>
+              </ul>
+            </div>
+            <div>
+              <strong>月次運用に含まれる内容：</strong>
+              <ul className="list-disc list-inside mt-1 ml-4 space-y-1">
+                <li>定期的なコンテンツ作成・入稿</li>
+                <li>月次LLMO診断とスコアリング</li>
+                <li>サイトの改善提案と実装</li>
+                <li>被リンク戦略の実行</li>
+                <li>年4回の詳細診断レポート</li>
+              </ul>
+            </div>
+          </div>
         </>
       ),
     },
@@ -122,7 +144,7 @@ export default function FAQSection() {
             <li>AI時代に乗り遅れたくない企業</li>
           </ul>
           <p className="mt-2">
-            まずは1万円の診断で、御社の現状と可能性を確認できます。
+            まずは5万円のLLMO診断で、御社の現状と可能性を確認できます。
           </p>
         </>
       ),
