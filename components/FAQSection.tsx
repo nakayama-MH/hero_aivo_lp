@@ -69,46 +69,40 @@ export default function FAQSection() {
       answer: (
         <>
           <strong>A:</strong>
-          <div className="mt-2 space-y-4">
-            <div className="p-3 bg-gray-50 rounded-lg">
-              <strong>【診断プラン】まずは現状を知りたい方へ</strong>
+          <div className="mt-2 space-y-3">
+            <div>
+              <strong>【診断プラン】</strong>
               <ul className="list-disc list-inside mt-1 ml-4">
-                <li>LLMO診断サービス：<strong>5万円</strong>（税別）</li>
+                <li>LLMO診断サービス：5万円（税別）</li>
                 <li>AI検索表示状況の分析、詳細レポート提出</li>
               </ul>
             </div>
-            <div className="p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-              <strong>【導入プラン】初期導入費用：15万円（税別）</strong>
-              <p className="text-sm text-gray-600 mt-1">※LLMO診断、AI最適化LP制作、初期セットアップ含む</p>
+            <div>
+              <strong>【導入プラン】共通初期費用：15万円（税別）</strong>
+              <p className="text-sm text-gray-600 mt-1 ml-4">※LLMO診断、AI最適化LP制作、初期セットアップ含む</p>
             </div>
-            <div className="p-3 bg-green-50 rounded-lg">
-              <div className="flex items-center gap-2">
-                <strong>A. 年間契約プラン</strong>
-                <span className="bg-green-500 text-white text-xs px-2 py-0.5 rounded">推奨</span>
-              </div>
-              <p className="text-sm text-green-700 mt-1">※2025年12月3日〜2026年12月2日のキャンペーン価格</p>
-              <ul className="list-disc list-inside mt-2 ml-4 space-y-1">
+            <div>
+              <strong>A. 年間契約プラン（推奨）</strong>
+              <p className="text-sm text-gray-600 mt-1 ml-4">※2025/12/3〜2026/12/2のキャンペーン価格</p>
+              <ul className="list-disc list-inside mt-1 ml-4 space-y-1">
                 <li>1〜6ヶ月目：月額10万円</li>
                 <li>7〜12ヶ月目：月額20万円</li>
-                <li>年間運用費合計：<strong>180万円</strong></li>
-                <li className="text-green-700">★一括払い特典：10万円割引（運用費<strong>170万円</strong>）</li>
+                <li>年間運用費合計：180万円</li>
+                <li>★一括払い特典：10万円割引（運用費170万円）</li>
               </ul>
-              <p className="text-sm text-gray-600 mt-2">契約更新：12ヶ月ごとに更新・解約の判断が可能</p>
+              <p className="text-sm text-gray-600 mt-1 ml-4">契約更新：12ヶ月ごとに更新・解約の判断が可能</p>
             </div>
-            <div className="p-3 bg-orange-50 rounded-lg">
-              <div className="flex items-center gap-2">
-                <strong>B. 半年契約プラン</strong>
-                <span className="bg-orange-500 text-white text-xs px-2 py-0.5 rounded">トライアル</span>
-              </div>
-              <p className="text-sm text-orange-700 mt-1">※2025年12月3日〜2026年12月2日のキャンペーン価格</p>
-              <ul className="list-disc list-inside mt-2 ml-4 space-y-1">
+            <div>
+              <strong>B. 半年契約プラン（トライアル）</strong>
+              <p className="text-sm text-gray-600 mt-1 ml-4">※2025/12/3〜2026/12/2のキャンペーン価格</p>
+              <ul className="list-disc list-inside mt-1 ml-4 space-y-1">
                 <li>1〜3ヶ月目：月額10万円</li>
                 <li>4〜6ヶ月目：月額20万円</li>
-                <li>半年運用費合計：<strong>90万円</strong></li>
+                <li>半年運用費合計：90万円</li>
               </ul>
-              <p className="text-sm text-gray-600 mt-2">契約更新：6ヶ月ごとに更新・解約の判断が可能</p>
+              <p className="text-sm text-gray-600 mt-1 ml-4">契約更新：6ヶ月ごとに更新・解約の判断が可能</p>
             </div>
-            <div className="p-3 bg-gray-100 rounded-lg">
+            <div>
               <strong>2年目以降：</strong>月額20万円（税別）・年間契約のみ
             </div>
             <div>
@@ -226,30 +220,30 @@ export default function FAQSection() {
       answer: (
         <>
           <strong>A:</strong>
-          <div className="mt-2 space-y-4">
-            <div className="p-3 bg-blue-50 rounded-lg">
+          <div className="mt-2 space-y-3">
+            <div>
               <strong>A. 現状分析：LLMO診断</strong>
-              <p className="text-sm text-gray-600 mt-1">貴社サイトのAI検索対応状況を詳細に分析・レポート</p>
+              <p className="ml-4">貴社サイトのAI検索対応状況を詳細に分析・レポート</p>
             </div>
-            <div className="p-3 bg-green-50 rounded-lg">
+            <div>
               <strong>B. 基盤構築：AI最適化LP制作</strong>
-              <ul className="list-disc list-inside mt-1 space-y-1 ml-4 text-sm">
-                <li><strong>構造化データ実装</strong>：AIが理解しやすいタグ付け（JSON-LD等）</li>
-                <li><strong>Q&A最適化</strong>：ユーザーの質問意図に合致するコンテンツ設計</li>
-                <li><strong>ソースコード最適化</strong>：AIのクローリングを促進する軽量・論理的なコード</li>
+              <ul className="list-disc list-inside mt-1 ml-4 space-y-1">
+                <li>構造化データ実装：AIが理解しやすいタグ付け（JSON-LD等）</li>
+                <li>Q&A最適化：ユーザーの質問意図に合致するコンテンツ設計</li>
+                <li>ソースコード最適化：AIのクローリングを促進する軽量・論理的なコード</li>
                 <li>チャットボット標準実装</li>
               </ul>
             </div>
-            <div className="p-3 bg-orange-50 rounded-lg">
+            <div>
               <strong>C. 月次運用：継続的な最適化と監視</strong>
-              <ul className="list-disc list-inside mt-1 space-y-1 ml-4 text-sm">
-                <li><strong>アルゴリズム追従</strong>：Google SGEやOpenAIの仕様変更に合わせた修正</li>
-                <li><strong>情報の鮮度維持</strong>：Q&Aの追加・リライトによる「生きた情報」の演出</li>
-                <li><strong>外部信頼性向上</strong>：被リンク・サイテーション（言及）の獲得</li>
-                <li><strong>レポーティング</strong>：毎月の簡易レポート＋年4回の詳細診断</li>
+              <ul className="list-disc list-inside mt-1 ml-4 space-y-1">
+                <li>アルゴリズム追従：Google SGEやOpenAIの仕様変更に合わせた修正</li>
+                <li>情報の鮮度維持：Q&Aの追加・リライトによる「生きた情報」の演出</li>
+                <li>外部信頼性向上：被リンク・サイテーション（言及）の獲得</li>
+                <li>レポーティング：毎月の簡易レポート＋年4回の詳細診断</li>
               </ul>
             </div>
-            <p className="text-sm text-gray-600">
+            <p className="mt-2">
               「作って終わり」では、AIから忘れ去られます。私たちは「番犬」として常に監視し、「成長」させる運用で貴社の表示を守ります。
             </p>
           </div>
