@@ -73,29 +73,29 @@
     "type": "message",
     "text": "診断結果をもとに、お客様の予算や状況に応じた提案を行います。\n\n【導入プラン】\n初期費用：15万円（LLMO診断、LP制作、初期セットアップ含む）\n\n運用費（2025/12/3〜2026/12/2キャンペーン価格）：\n・年間契約：180万円（一括払いで170万円）\n・半年契約：90万円",
     "options": [
-      {"id": "lp_or_hp", "label": "LPとHPの違いは？"},
-      {"id": "pricing", "label": "料金詳細を見る"},
+      {"id": "yearly_price", "label": "年間契約の詳細"},
+      {"id": "half_year_price", "label": "半年契約の詳細"},
       {"id": "back_to_main", "label": "メインメニューに戻る"}
     ]
   },
 
-  "lp_or_hp": {
-    "id": "lp_or_hp",
+  "contract_comparison": {
+    "id": "contract_comparison",
     "type": "message",
-    "text": "HERO AIVOではLP制作をメインとしたパッケージを提供しています。\n\n【導入プラン】\n初期費用：15万円（税別）\n• LLMO診断\n• AI最適化LP制作\n• 初期セットアップ\n\n運用費（キャンペーン価格）：\n• 年間契約（推奨）：180万円\n• 半年契約（トライアル）：90万円\n\n2年目以降：月額20万円（年間契約のみ）",
+    "text": "【年間契約 vs 半年契約の比較】\n\n■ 年間契約（推奨）\n• 運用費：180万円（一括170万円）\n• じっくり効果を実感できる\n• コスト効率が良い\n\n■ 半年契約（トライアル）\n• 運用費：90万円\n• まずは試してみたい方向け\n• 6ヶ月後に継続判断可能\n\n※どちらも初期費用15万円が別途必要です。",
     "options": [
-      {"id": "which_better", "label": "どちらがおすすめ？"},
-      {"id": "pricing", "label": "料金を見る"},
+      {"id": "yearly_price", "label": "年間契約の詳細"},
+      {"id": "half_year_price", "label": "半年契約の詳細"},
       {"id": "back_to_main", "label": "メインメニューに戻る"}
     ]
   },
 
-  "which_better": {
-    "id": "which_better",
+  "recommend_plan": {
+    "id": "recommend_plan",
     "type": "message",
-    "text": "まずはLPから始めることをおすすめします。\n\n理由：\n• 初期投資が少ない\n• 効果を早く実感できる\n• LP成功後にHP展開も可能\n• 失敗リスクを最小限に抑えられる",
+    "text": "年間契約プランをおすすめします。\n\n理由：\n• LLMO対策は6ヶ月〜1年で効果が見え始める\n• 継続的な運用で資産価値が蓄積\n• 一括払いなら10万円お得\n• 2年目以降は月額20万円で安定運用",
     "options": [
-      {"id": "pricing", "label": "料金を確認する"},
+      {"id": "yearly_price", "label": "年間契約を確認する"},
       {"id": "value", "label": "得られる効果を見る"},
       {"id": "back_to_main", "label": "メインメニューに戻る"}
     ]
@@ -129,8 +129,8 @@
     "text": "HERO AIVOの料金体系をご紹介します。\n\n詳しく知りたい内容を選択してください。",
     "options": [
       {"id": "diagnosis_price", "label": "診断サービスの料金"},
-      {"id": "lp_price", "label": "LP制作・運用の料金"},
-      {"id": "hp_price", "label": "HP制作・運用の料金"},
+      {"id": "yearly_price", "label": "年間契約プラン（推奨）"},
+      {"id": "half_year_price", "label": "半年契約プラン"},
       {"id": "price_reason", "label": "なぜこの価格？"},
       {"id": "back_to_main", "label": "メインメニューに戻る"}
     ]
@@ -142,7 +142,7 @@
     "text": "LLMO診断サービス：50,000円（単発）\n\n「会社の人間ドック」として、現状のWebサイトをAI視点で分析します。\n\nまずはここから始めることで、現状を正確に把握しAI時代への第一歩を踏み出せます。",
     "options": [
       {"id": "diagnosis_content", "label": "診断の内容は？"},
-      {"id": "lp_price", "label": "フルパッケージ料金を見る"},
+      {"id": "yearly_price", "label": "導入プラン料金を見る"},
       {"id": "back_to_main", "label": "メインメニューに戻る"}
     ]
   },
@@ -158,19 +158,19 @@
     ]
   },
 
-  "lp_price": {
-    "id": "lp_price",
+  "yearly_price": {
+    "id": "yearly_price",
     "type": "message",
     "text": "【年間契約プラン】推奨\n※2025/12/3〜2026/12/2のキャンペーン価格\n\n初期費用：15万円（税別）\n• LLMO診断、LP制作、初期セットアップ含む\n\n運用費：\n• 1〜6ヶ月目：月額10万円\n• 7〜12ヶ月目：月額20万円\n• 年間合計：180万円\n★一括払い特典：10万円割引（170万円）\n\n含まれる内容：\n• AI最適化LP制作（フルスクラッチ）\n• チャットボット標準装備\n• アルゴリズム追従（AI仕様変更対応）\n• 情報の鮮度維持（Q&A追加・リライト）\n• 被リンク・サイテーション獲得\n• 毎月の簡易レポート＋年4回の詳細診断\n\n契約更新：12ヶ月ごとに更新・解約判断可能\n2年目以降：月額20万円（年間契約のみ）",
     "options": [
-      {"id": "lp_cost_benefit", "label": "費用対効果は？"},
-      {"id": "hp_price", "label": "半年契約を見る"},
+      {"id": "yearly_cost_benefit", "label": "費用対効果は？"},
+      {"id": "half_year_price", "label": "半年契約を見る"},
       {"id": "back_to_main", "label": "メインメニューに戻る"}
     ]
   },
 
-  "lp_cost_benefit": {
-    "id": "lp_cost_benefit",
+  "yearly_cost_benefit": {
+    "id": "yearly_cost_benefit",
     "type": "message",
     "text": "初年度は段階的な投資設計となっており、効果を確認しながら進められます。\n\n【年間契約の場合】\n初期15万円＋運用180万円＝合計195万円\n一括払いなら合計185万円（10万円お得）\n\nLPは24時間365日働き続け、時間とともに価値が増していきます。広告費のように消えていくのではなく、資産として蓄積されます。2年目以降は月額20万円での年間契約となります。",
     "options": [
@@ -180,24 +180,13 @@
     ]
   },
 
-  "hp_price": {
-    "id": "hp_price",
+  "half_year_price": {
+    "id": "half_year_price",
     "type": "message",
     "text": "【半年契約プラン】トライアル\n※2025/12/3〜2026/12/2のキャンペーン価格\n\n初期費用：15万円（税別）\n• LLMO診断、LP制作、初期セットアップ含む\n\n運用費：\n• 1〜3ヶ月目：月額10万円\n• 4〜6ヶ月目：月額20万円\n• 半年合計：90万円\n\n含まれる内容：\n• AI最適化LP制作\n• LLMO対策実装\n• 6ヶ月間の運用サポート\n• コンテンツ更新\n• 月次簡易レポート\n\n契約更新：6ヶ月ごとに更新・解約判断可能\n2年目以降：月額20万円（年間契約のみ）\n\nまずは半年間で効果を確認したい企業様向けのプランです。",
     "options": [
-      {"id": "hp_scope", "label": "対応範囲は？"},
-      {"id": "lp_price", "label": "年間契約を見る"},
-      {"id": "back_to_main", "label": "メインメニューに戻る"}
-    ]
-  },
-
-  "hp_scope": {
-    "id": "hp_scope",
-    "type": "message",
-    "text": "HP制作の対応範囲：\n\n• 企業サイト全体の設計・構築\n• 複数ページのLLMO最適化\n• コンテンツ管理システム導入\n• ブログ・ニュース機能\n• 採用ページ\n• 問い合わせフォーム\n• SEO・LLMO対策",
-    "options": [
-      {"id": "pricing", "label": "料金一覧に戻る"},
-      {"id": "features", "label": "強みを見る"},
+      {"id": "recommend_plan", "label": "どちらがおすすめ？"},
+      {"id": "yearly_price", "label": "年間契約を見る"},
       {"id": "back_to_main", "label": "メインメニューに戻る"}
     ]
   },
@@ -328,7 +317,7 @@
   "target_problems": {
     "id": "target_problems",
     "type": "message",
-    "text": "よくある企業課題：\n\n• AI対策の必要性は理解しているが、具体的な施策が不明\n• 広告費をかけ続けないと集客できない\n• HP/LPが古く、スマホ・AI対応していない\n• 若年層（AI検索世代）からの流入が減少\n• 何が問題なのか分からない",
+    "text": "よくある企業課題：\n\n• AI対策の必要性は理解しているが、具体的な施策が不明\n• 広告費をかけ続けないと集客できない\n• Webサイトが古く、スマホ・AI対応していない\n• 若年層（AI検索世代）からの流入が減少\n• 何が問題なのか分からない",
     "options": [
       {"id": "solution", "label": "どう解決できる？"},
       {"id": "value", "label": "得られる効果を見る"},
