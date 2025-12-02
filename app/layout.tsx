@@ -97,27 +97,39 @@ export default function RootLayout({
     offers: [
       {
         '@type': 'Offer',
-        name: 'LLMO診断（単品）',
+        name: 'LLMO診断サービス',
         price: '50000',
         priceCurrency: 'JPY',
+        description: 'AI検索表示状況の分析、詳細レポート提出',
       },
       {
         '@type': 'Offer',
-        name: 'フルパッケージ（年間契約・初年度）',
+        name: '導入プラン初期費用',
+        price: '150000',
+        priceCurrency: 'JPY',
+        description: 'LLMO診断、AI最適化LP制作、初期セットアップ含む',
+      },
+      {
+        '@type': 'Offer',
+        name: '年間契約プラン（推奨・キャンペーン価格）',
         price: '1800000',
         priceCurrency: 'JPY',
-        description: '初期費用15万円、運用費180万円（前半6ヶ月月額10万円、後半6ヶ月月額20万円）',
+        description: '運用費180万円（1-6ヶ月目月額10万円、7-12ヶ月目月額20万円）。一括払い特典：10万円割引で170万円。2025/12/3〜2026/12/2のキャンペーン価格。',
+        validFrom: '2025-12-03',
+        validThrough: '2026-12-02',
       },
       {
         '@type': 'Offer',
-        name: 'フルパッケージ（半年契約）',
-        price: '1100000',
+        name: '半年契約プラン（トライアル・キャンペーン価格）',
+        price: '900000',
         priceCurrency: 'JPY',
-        description: '初期費用込み、総額110万円',
+        description: '運用費90万円（1-3ヶ月目月額10万円、4-6ヶ月目月額20万円）。初期費用15万円別途。2025/12/3〜2026/12/2のキャンペーン価格。',
+        validFrom: '2025-12-03',
+        validThrough: '2026-12-02',
       },
       {
         '@type': 'Offer',
-        name: 'フルパッケージ（2年目以降）',
+        name: '2年目以降（年間契約のみ）',
         price: '200000',
         priceCurrency: 'JPY',
         priceSpecification: {
@@ -126,6 +138,7 @@ export default function RootLayout({
           priceCurrency: 'JPY',
           unitText: '月額',
         },
+        description: '月額20万円、年間契約のみ',
       },
     ],
     serviceType: 'Webサイト制作・運用サービス',
@@ -140,7 +153,7 @@ export default function RootLayout({
         name: '導入費用はいくらですか？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'LLMO診断のみの場合は5万円です。フルパッケージの場合、初期費用15万円（LP制作含む）と運用費が必要です。初年度キャンペーン価格は前半6ヶ月月額10万円、後半6ヶ月月額20万円、2年目以降は月額20万円です。広告費は一切不要です。',
+          text: 'LLMO診断のみは5万円（税別）です。導入プランは初期費用15万円（LLMO診断、LP制作、初期セットアップ含む）と運用費が必要です。年間契約は運用費180万円（一括払いで170万円）、半年契約は運用費90万円です。2年目以降は月額20万円の年間契約のみとなります。広告費は一切不要です。',
         },
       },
       {
@@ -156,7 +169,7 @@ export default function RootLayout({
         name: '月次運用サービスには何が含まれますか？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '定期的なコンテンツ作成・入稿（自社開発ツール使用）、月次LLMO診断とスコアリング、サイトの改善提案と実装、AI検索対応の最新情報反映、被リンク戦略の実行、年4回の詳細診断レポートを提供します。',
+          text: 'アルゴリズム追従（Google SGEやOpenAIの仕様変更に合わせたコード修正）、情報の鮮度維持（Q&Aの追加・リライト）、外部信頼性向上（被リンク・サイテーション獲得）、レポーティング（毎月の簡易レポートと年4回の詳細診断レポート）を提供します。「番犬」として常に監視し、「成長」させる運用で貴社の表示を守ります。',
         },
       },
       {
@@ -164,7 +177,7 @@ export default function RootLayout({
         name: '最低契約期間はありますか？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '契約期間の縛りはありませんが、効果を実感いただくため、最低6ヶ月〜1年の継続をおすすめしています。',
+          text: '年間契約プラン（12ヶ月ごとに更新・解約判断可能）と半年契約プラン（6ヶ月ごとに更新・解約判断可能）があります。効果を実感いただくため、最低6ヶ月〜1年の継続をおすすめしています。2年目以降は年間契約のみとなります。',
         },
       },
       {

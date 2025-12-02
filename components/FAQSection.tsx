@@ -69,43 +69,55 @@ export default function FAQSection() {
       answer: (
         <>
           <strong>A:</strong>
-          <div className="mt-2 space-y-3">
-            <div>
-              <strong>【LLMO診断のみ】</strong>
+          <div className="mt-2 space-y-4">
+            <div className="p-3 bg-gray-50 rounded-lg">
+              <strong>【診断プラン】まずは現状を知りたい方へ</strong>
               <ul className="list-disc list-inside mt-1 ml-4">
-                <li>単品価格：5万円</li>
-                <li>AI検索における現状分析と改善提案</li>
+                <li>LLMO診断サービス：<strong>5万円</strong>（税別）</li>
+                <li>AI検索表示状況の分析、詳細レポート提出</li>
               </ul>
             </div>
-            <div>
-              <strong>【フルパッケージ】</strong>
-              <ul className="list-disc list-inside mt-1 ml-4 space-y-1">
-                <li>初期費用：15万円（LP制作含む）</li>
-                <li>
-                  <strong>初年度キャンペーン価格：</strong>
-                  <br />
-                  <span className="ml-4">前半6ヶ月 月額10万円、後半6ヶ月 月額20万円</span>
-                  <br />
-                  <span className="ml-4">年間合計180万円（初期費用別）</span>
-                  <br />
-                  <span className="ml-4 text-sm">※一括払いの場合180万円</span>
-                </li>
-                <li>
-                  <strong>2年目以降：</strong>月額20万円
-                </li>
-                <li>
-                  <strong>半年契約：</strong>総額110万円（初期費用込み）
-                </li>
+            <div className="p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+              <strong>【導入プラン】初期導入費用：15万円（税別）</strong>
+              <p className="text-sm text-gray-600 mt-1">※LLMO診断、AI最適化LP制作、初期セットアップ含む</p>
+            </div>
+            <div className="p-3 bg-green-50 rounded-lg">
+              <div className="flex items-center gap-2">
+                <strong>A. 年間契約プラン</strong>
+                <span className="bg-green-500 text-white text-xs px-2 py-0.5 rounded">推奨</span>
+              </div>
+              <p className="text-sm text-green-700 mt-1">※2025年12月3日〜2026年12月2日のキャンペーン価格</p>
+              <ul className="list-disc list-inside mt-2 ml-4 space-y-1">
+                <li>1〜6ヶ月目：月額10万円</li>
+                <li>7〜12ヶ月目：月額20万円</li>
+                <li>年間運用費合計：<strong>180万円</strong></li>
+                <li className="text-green-700">★一括払い特典：10万円割引（運用費<strong>170万円</strong>）</li>
               </ul>
+              <p className="text-sm text-gray-600 mt-2">契約更新：12ヶ月ごとに更新・解約の判断が可能</p>
+            </div>
+            <div className="p-3 bg-orange-50 rounded-lg">
+              <div className="flex items-center gap-2">
+                <strong>B. 半年契約プラン</strong>
+                <span className="bg-orange-500 text-white text-xs px-2 py-0.5 rounded">トライアル</span>
+              </div>
+              <p className="text-sm text-orange-700 mt-1">※2025年12月3日〜2026年12月2日のキャンペーン価格</p>
+              <ul className="list-disc list-inside mt-2 ml-4 space-y-1">
+                <li>1〜3ヶ月目：月額10万円</li>
+                <li>4〜6ヶ月目：月額20万円</li>
+                <li>半年運用費合計：<strong>90万円</strong></li>
+              </ul>
+              <p className="text-sm text-gray-600 mt-2">契約更新：6ヶ月ごとに更新・解約の判断が可能</p>
+            </div>
+            <div className="p-3 bg-gray-100 rounded-lg">
+              <strong>2年目以降：</strong>月額20万円（税別）・年間契約のみ
             </div>
             <div>
               <strong>月次運用に含まれる内容：</strong>
               <ul className="list-disc list-inside mt-1 ml-4 space-y-1">
-                <li>定期的なコンテンツ作成・入稿</li>
-                <li>月次LLMO診断とスコアリング</li>
-                <li>サイトの改善提案と実装</li>
-                <li>被リンク戦略の実行</li>
-                <li>年4回の詳細診断レポート</li>
+                <li>アルゴリズム追従：AI仕様変更に合わせたコード修正</li>
+                <li>情報の鮮度維持：Q&Aの追加・リライト</li>
+                <li>外部信頼性向上：被リンク・サイテーション獲得</li>
+                <li>レポーティング：毎月の簡易レポート＋年4回の詳細診断</li>
               </ul>
             </div>
           </div>
@@ -174,18 +186,37 @@ export default function FAQSection() {
       question: 'SEO対策との違いは何ですか？',
       answer: (
         <>
-          <strong>A:</strong> SEOはGoogle検索への対策、LLMOはAI検索への対策です。
-          <ul className="list-disc list-inside mt-2 space-y-2">
-            <li>
-              <strong>SEO</strong>：Googleのアルゴリズムに最適化
-            </li>
-            <li>
-              <strong>LLMO</strong>：ChatGPTなどのAIに理解されやすい構造化
-            </li>
-          </ul>
-          <p className="mt-2">
-            HERO AIVOは<strong>両方に対応</strong>
-            しています。GoogleでもAIでも見つかる、次世代型のサイトをお届けします。
+          <strong>A:</strong> 「ググる」から「AIに聞く」時代への変化に対応する施策です。
+          <div className="mt-3 overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="border border-gray-300 px-3 py-2 text-left">項目</th>
+                  <th className="border border-gray-300 px-3 py-2 text-left">SEO（従来）</th>
+                  <th className="border border-gray-300 px-3 py-2 text-left">LLMO（HERO AIVO）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-gray-300 px-3 py-2 font-medium">ターゲット</td>
+                  <td className="border border-gray-300 px-3 py-2">人間（検索ユーザー）</td>
+                  <td className="border border-gray-300 px-3 py-2">AI（大規模言語モデル）</td>
+                </tr>
+                <tr className="bg-gray-50">
+                  <td className="border border-gray-300 px-3 py-2 font-medium">目的</td>
+                  <td className="border border-gray-300 px-3 py-2">検索順位の上昇</td>
+                  <td className="border border-gray-300 px-3 py-2">回答内での引用・推奨</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-3 py-2 font-medium">施策</td>
+                  <td className="border border-gray-300 px-3 py-2">キーワード含有率、被リンク</td>
+                  <td className="border border-gray-300 px-3 py-2">構造化データ、信頼性証明</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3">
+            HERO AIVOは<strong>SEOとLLMO両方に対応</strong>。ChatGPT、Gemini、Perplexityなどの主要AIエンジンで「正確」かつ「優先的」に引用される最適化を行います。
           </p>
         </>
       ),
@@ -195,26 +226,32 @@ export default function FAQSection() {
       answer: (
         <>
           <strong>A:</strong>
-          <div className="mt-2 space-y-3">
-            <div>
-              <strong>初期制作時：</strong>
-              <ul className="list-disc list-inside mt-1 space-y-1 ml-4">
-                <li>LLMO完全対応のサイト設計・開発</li>
-                <li>構造化データ・メタ情報の最適配置</li>
+          <div className="mt-2 space-y-4">
+            <div className="p-3 bg-blue-50 rounded-lg">
+              <strong>A. 現状分析：LLMO診断</strong>
+              <p className="text-sm text-gray-600 mt-1">貴社サイトのAI検索対応状況を詳細に分析・レポート</p>
+            </div>
+            <div className="p-3 bg-green-50 rounded-lg">
+              <strong>B. 基盤構築：AI最適化LP制作</strong>
+              <ul className="list-disc list-inside mt-1 space-y-1 ml-4 text-sm">
+                <li><strong>構造化データ実装</strong>：AIが理解しやすいタグ付け（JSON-LD等）</li>
+                <li><strong>Q&A最適化</strong>：ユーザーの質問意図に合致するコンテンツ設計</li>
+                <li><strong>ソースコード最適化</strong>：AIのクローリングを促進する軽量・論理的なコード</li>
                 <li>チャットボット標準実装</li>
-                <li>初回コンテンツ作成</li>
               </ul>
             </div>
-            <div>
-              <strong>月次運用：</strong>
-              <ul className="list-disc list-inside mt-1 space-y-1 ml-4">
-                <li>定期的なコンテンツ作成・入稿（月2-4本）</li>
-                <li>LLMO診断とスコアリング</li>
-                <li>改善提案と実装</li>
-                <li>AI検索トレンドの反映</li>
+            <div className="p-3 bg-orange-50 rounded-lg">
+              <strong>C. 月次運用：継続的な最適化と監視</strong>
+              <ul className="list-disc list-inside mt-1 space-y-1 ml-4 text-sm">
+                <li><strong>アルゴリズム追従</strong>：Google SGEやOpenAIの仕様変更に合わせた修正</li>
+                <li><strong>情報の鮮度維持</strong>：Q&Aの追加・リライトによる「生きた情報」の演出</li>
+                <li><strong>外部信頼性向上</strong>：被リンク・サイテーション（言及）の獲得</li>
+                <li><strong>レポーティング</strong>：毎月の簡易レポート＋年4回の詳細診断</li>
               </ul>
             </div>
-            <p>全て自社完結型なので、品質も納期も安心です。</p>
+            <p className="text-sm text-gray-600">
+              「作って終わり」では、AIから忘れ去られます。私たちは「番犬」として常に監視し、「成長」させる運用で貴社の表示を守ります。
+            </p>
           </div>
         </>
       ),
