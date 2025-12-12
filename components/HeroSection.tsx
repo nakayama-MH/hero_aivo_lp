@@ -15,12 +15,13 @@ export default function HeroSection() {
       </div>
 
       {/* 背景画像 - デスクトップ用 */}
-      <div className="w-full h-[400px] sm:h-[600px] lg:h-[800px] relative hidden sm:block">
+      <div className="w-full relative hidden sm:block">
         <Image
-          src="/hero-wave.png"
-          alt="Hero Wave"
-          fill
-          className="object-cover object-center"
+          src="/Key_visual_PC.png"
+          alt="AIに見つけてもらうWebサイト制作"
+          width={1920}
+          height={1080}
+          className="w-full h-auto"
           priority
         />
       </div>

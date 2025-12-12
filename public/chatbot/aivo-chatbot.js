@@ -1,4 +1,4 @@
-"use strict";var AivoChatbot=(()=>{var o=class{constructor(e){this.messageHistory=[];this.currentNodeId="welcome";this.chatData=e}getCurrentNode(){return this.chatData[this.currentNodeId]}selectOption(e){let t=this.chatData[e];return t?t.type==="redirect"&&t.id!==e?(this.currentNodeId=t.id,this.chatData[t.id]):(this.currentNodeId=e,t):(console.error(`Node ${e} not found`),this.chatData.welcome)}addMessage(e){this.messageHistory.push(e)}getHistory(){return this.messageHistory}reset(){this.currentNodeId="welcome",this.messageHistory=[]}hasHistory(){return this.messageHistory.length>0}};var s=class{constructor(e){this.config=e;this.container=null;this.chatWindow=null;this.messagesContainer=null;this.floatingButton=null}init(){this.createFloatingButton(),this.createChatWindow()}createFloatingButton(){this.floatingButton=document.createElement("div"),this.floatingButton.id="aivo-chatbot-button",this.floatingButton.innerHTML=`
+"use strict";var AivoChatbot=(()=>{var o=class{constructor(t){this.messageHistory=[];this.currentNodeId="welcome";this.chatData=t}getCurrentNode(){return this.chatData[this.currentNodeId]}selectOption(t){let e=this.chatData[t];return e?e.type==="redirect"&&e.id!==t?(this.currentNodeId=e.id,this.chatData[e.id]):(this.currentNodeId=t,e):(console.error(`Node ${t} not found`),this.chatData.welcome)}addMessage(t){this.messageHistory.push(t)}getHistory(){return this.messageHistory}reset(){this.currentNodeId="welcome",this.messageHistory=[]}hasHistory(){return this.messageHistory.length>0}};var s=class{constructor(t){this.config=t;this.container=null;this.chatWindow=null;this.messagesContainer=null;this.floatingButton=null}init(){this.createFloatingButton(),this.createChatWindow()}createFloatingButton(){this.floatingButton=document.createElement("div"),this.floatingButton.id="aivo-chatbot-button",this.floatingButton.innerHTML=`
       <img src="${this.config.iconUrl}" alt="AIVO Chatbot" />
       <div class="aivo-chat-badge">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -37,13 +37,13 @@
           <span class="aivo-chatbot-footer-text">Powered by HERO AIVO</span>
         </div>
       </div>
-    `,document.body.appendChild(this.container),this.messagesContainer=document.getElementById("aivo-chatbot-messages")}toggleChat(){if(!this.container)return;this.container.classList.contains("aivo-chatbot-hidden")?(this.container.classList.remove("aivo-chatbot-hidden"),this.container.classList.add("aivo-chatbot-visible"),this.floatingButton?.classList.add("aivo-chatbot-button-hidden")):(this.container.classList.remove("aivo-chatbot-visible"),this.container.classList.add("aivo-chatbot-hidden"),this.floatingButton?.classList.remove("aivo-chatbot-button-hidden"))}closeChat(){this.container&&(this.container.classList.remove("aivo-chatbot-visible"),this.container.classList.add("aivo-chatbot-hidden"),this.floatingButton?.classList.remove("aivo-chatbot-button-hidden"))}addBotMessage(e,t){if(!this.messagesContainer)return;let a=document.createElement("div");a.className="aivo-message aivo-message-bot";let i=document.createElement("div");i.className="aivo-message-bubble aivo-message-bubble-bot";let r=this.formatText(e);if(i.innerHTML=r,a.appendChild(i),this.messagesContainer.appendChild(a),t&&t.length>0){let c=this.createOptionsElement(t);this.messagesContainer.appendChild(c)}this.scrollToBottom()}addUserMessage(e){if(!this.messagesContainer)return;let t=document.createElement("div");t.className="aivo-message aivo-message-user";let a=document.createElement("div");a.className="aivo-message-bubble aivo-message-bubble-user",a.textContent=e,t.appendChild(a),this.messagesContainer.appendChild(t),this.scrollToBottom()}createOptionsElement(e){let t=document.createElement("div");return t.className="aivo-options-container",e.forEach(a=>{let i=document.createElement("button");i.className="aivo-option-button",i.dataset.optionId=a.id,i.innerHTML=`${a.icon?a.icon+" ":""}${a.label}`,t.appendChild(i)}),t}formatText(e){return e.replace(/\*\*(.*?)\*\*/g,"<strong>$1</strong>").replace(/\n\n/g,"</p><p>").replace(/\n/g,"<br>").replace(/^(.*)$/,"<p>$1</p>").replace(/<p><\/p>/g,"").replace(/^<p>(.*)<\/p>$/,"$1")}removeLastOptions(){if(!this.messagesContainer)return;let e=this.messagesContainer.querySelector(".aivo-options-container:last-child");e&&e.remove()}clearMessages(){this.messagesContainer&&(this.messagesContainer.innerHTML="")}scrollToBottom(){this.messagesContainer&&setTimeout(()=>{this.messagesContainer.scrollTop=this.messagesContainer.scrollHeight},100)}getFloatingButton(){return this.floatingButton}getCloseButton(){return document.getElementById("aivo-chatbot-close")}getMessagesContainer(){return this.messagesContainer}getResetButton(){return document.getElementById("aivo-chatbot-reset")}showTypingIndicator(){if(!this.messagesContainer)return;let e=document.createElement("div");e.className="aivo-message aivo-message-bot",e.id="aivo-typing-indicator";let t=document.createElement("div");t.className="aivo-message-bubble aivo-message-bubble-bot aivo-typing-bubble",t.innerHTML=`
+    `,document.body.appendChild(this.container),this.messagesContainer=document.getElementById("aivo-chatbot-messages")}toggleChat(){if(!this.container)return;this.container.classList.contains("aivo-chatbot-hidden")?(this.container.classList.remove("aivo-chatbot-hidden"),this.container.classList.add("aivo-chatbot-visible"),this.floatingButton?.classList.add("aivo-chatbot-button-hidden")):(this.container.classList.remove("aivo-chatbot-visible"),this.container.classList.add("aivo-chatbot-hidden"),this.floatingButton?.classList.remove("aivo-chatbot-button-hidden"))}closeChat(){this.container&&(this.container.classList.remove("aivo-chatbot-visible"),this.container.classList.add("aivo-chatbot-hidden"),this.floatingButton?.classList.remove("aivo-chatbot-button-hidden"))}addBotMessage(t,e){if(!this.messagesContainer)return;let a=document.createElement("div");a.className="aivo-message aivo-message-bot";let i=document.createElement("div");i.className="aivo-message-bubble aivo-message-bubble-bot";let r=this.formatText(t);if(i.innerHTML=r,a.appendChild(i),this.messagesContainer.appendChild(a),e&&e.length>0){let c=this.createOptionsElement(e);this.messagesContainer.appendChild(c)}this.scrollToBottom()}addUserMessage(t){if(!this.messagesContainer)return;let e=document.createElement("div");e.className="aivo-message aivo-message-user";let a=document.createElement("div");a.className="aivo-message-bubble aivo-message-bubble-user",a.textContent=t,e.appendChild(a),this.messagesContainer.appendChild(e),this.scrollToBottom()}createOptionsElement(t){let e=document.createElement("div");return e.className="aivo-options-container",t.forEach(a=>{let i=document.createElement("button");i.className="aivo-option-button",i.dataset.optionId=a.id,i.innerHTML=`${a.icon?a.icon+" ":""}${a.label}`,e.appendChild(i)}),e}formatText(t){return t.replace(/\*\*(.*?)\*\*/g,"<strong>$1</strong>").replace(/\n\n/g,"</p><p>").replace(/\n/g,"<br>").replace(/^(.*)$/,"<p>$1</p>").replace(/<p><\/p>/g,"").replace(/^<p>(.*)<\/p>$/,"$1")}removeLastOptions(){if(!this.messagesContainer)return;let t=this.messagesContainer.querySelector(".aivo-options-container:last-child");t&&t.remove()}clearMessages(){this.messagesContainer&&(this.messagesContainer.innerHTML="")}scrollToBottom(){this.messagesContainer&&setTimeout(()=>{this.messagesContainer.scrollTop=this.messagesContainer.scrollHeight},100)}getFloatingButton(){return this.floatingButton}getCloseButton(){return document.getElementById("aivo-chatbot-close")}getMessagesContainer(){return this.messagesContainer}getResetButton(){return document.getElementById("aivo-chatbot-reset")}showTypingIndicator(){if(!this.messagesContainer)return;let t=document.createElement("div");t.className="aivo-message aivo-message-bot",t.id="aivo-typing-indicator";let e=document.createElement("div");e.className="aivo-message-bubble aivo-message-bubble-bot aivo-typing-bubble",e.innerHTML=`
       <div class="aivo-typing-dots">
         <span></span>
         <span></span>
         <span></span>
       </div>
-    `,e.appendChild(t),this.messagesContainer.appendChild(e),this.scrollToBottom()}hideTypingIndicator(){let e=document.getElementById("aivo-typing-indicator");e&&e.remove()}};var l=class{constructor(e,t={}){this.chatData=e;this.config=t;this.isInitialized=!1;this.conversation=new o(e),this.ui=new s({iconUrl:t.iconUrl||"/chatbot/icon.png",primaryColor:t.primaryColor||"#FF0000"})}init(){this.isInitialized||(document.readyState==="loading"?document.addEventListener("DOMContentLoaded",()=>this.setup()):this.setup(),this.isInitialized=!0)}setup(){this.ui.init(),this.attachEventListeners(),this.showWelcomeMessage()}attachEventListeners(){let e=this.ui.getFloatingButton();e&&e.addEventListener("click",()=>{this.ui.toggleChat()});let t=this.ui.getCloseButton();t&&t.addEventListener("click",()=>{this.ui.closeChat()});let a=this.ui.getResetButton();a&&a.addEventListener("click",()=>{this.reset()});let i=this.ui.getMessagesContainer();i&&i.addEventListener("click",r=>{let n=r.target.closest(".aivo-option-button");n&&n.dataset.optionId&&this.handleOptionClick(n.dataset.optionId,n.textContent||"")})}showWelcomeMessage(){let e=this.conversation.getCurrentNode();e&&e.text&&this.ui.addBotMessage(e.text,e.options)}handleOptionClick(e,t){this.ui.removeLastOptions();let a=t.trim();this.ui.addUserMessage(a),this.ui.showTypingIndicator();let i=this.conversation.selectOption(e);setTimeout(()=>{this.ui.hideTypingIndicator(),i&&i.text&&this.ui.addBotMessage(i.text,i.options)},1e3)}reset(){this.conversation.reset(),this.ui.clearMessages(),this.showWelcomeMessage()}};var p={welcome:{id:"welcome",type:"message",text:`HERO AIVO\u306B\u3064\u3044\u3066\u306E\u3054\u8CEA\u554F\u306B\u304A\u7B54\u3048\u3057\u307E\u3059\u3002
+    `,t.appendChild(e),this.messagesContainer.appendChild(t),this.scrollToBottom()}hideTypingIndicator(){let t=document.getElementById("aivo-typing-indicator");t&&t.remove()}};var l=class{constructor(t,e={}){this.chatData=t;this.config=e;this.isInitialized=!1;this.conversation=new o(t),this.ui=new s({iconUrl:e.iconUrl||"/chatbot/icon.png",primaryColor:e.primaryColor||"#FF0000"})}init(){this.isInitialized||(document.readyState==="loading"?document.addEventListener("DOMContentLoaded",()=>this.setup()):this.setup(),this.isInitialized=!0)}setup(){this.ui.init(),this.attachEventListeners(),this.showWelcomeMessage()}attachEventListeners(){let t=this.ui.getFloatingButton();t&&t.addEventListener("click",()=>{this.ui.toggleChat()});let e=this.ui.getCloseButton();e&&e.addEventListener("click",()=>{this.ui.closeChat()});let a=this.ui.getResetButton();a&&a.addEventListener("click",()=>{this.reset()});let i=this.ui.getMessagesContainer();i&&i.addEventListener("click",r=>{let n=r.target.closest(".aivo-option-button");n&&n.dataset.optionId&&this.handleOptionClick(n.dataset.optionId,n.textContent||"")})}showWelcomeMessage(){let t=this.conversation.getCurrentNode();t&&t.text&&this.ui.addBotMessage(t.text,t.options)}handleOptionClick(t,e){this.ui.removeLastOptions();let a=e.trim();this.ui.addUserMessage(a),this.ui.showTypingIndicator();let i=this.conversation.selectOption(t);setTimeout(()=>{this.ui.hideTypingIndicator(),i&&i.text&&this.ui.addBotMessage(i.text,i.options)},1e3)}reset(){this.conversation.reset(),this.ui.clearMessages(),this.showWelcomeMessage()}};var p={welcome:{id:"welcome",type:"message",text:`HERO AIVO\u306B\u3064\u3044\u3066\u306E\u3054\u8CEA\u554F\u306B\u304A\u7B54\u3048\u3057\u307E\u3059\u3002
 
 \u304A\u77E5\u308A\u306B\u306A\u308A\u305F\u3044\u5185\u5BB9\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002`,options:[{id:"service_overview",label:"\u30B5\u30FC\u30D3\u30B9\u6982\u8981"},{id:"pricing",label:"\u6599\u91D1\u306B\u3064\u3044\u3066"},{id:"features",label:"\u5F37\u307F\u30FB\u7279\u5FB4"},{id:"target",label:"\u5BFE\u8C61\u3068\u306A\u308B\u4F01\u696D"},{id:"value",label:"\u5F97\u3089\u308C\u308B\u52B9\u679C"}]},service_overview:{id:"service_overview",type:"message",text:`\u300C\u30B0\u30B0\u308B\u300D\u304B\u3089\u300CAI\u306B\u805E\u304F\u300D\u6642\u4EE3\u3078\u3002
 
@@ -58,46 +58,25 @@ HERO AIVO\u306F\u3001ChatGPT\u3001Gemini\u3001Perplexity\u306A\u3069\u306E\u4E3B
 \u2022 \u300C\u4F5C\u3063\u3066\u7D42\u308F\u308A\u300D\u3067\u306F\u306A\u304F\u300C\u80B2\u3064LP\u300D\u3068\u3057\u3066\u4FA1\u5024\u304C\u5897\u52A0
 \u2022 \u6642\u9593\u7D4C\u904E\u3068\u3068\u3082\u306B\u96C6\u5BA2\u529B\u304C\u5411\u4E0A`,options:[{id:"pricing",label:"\u6599\u91D1\u3092\u78BA\u8A8D\u3059\u308B"},{id:"service_overview",label:"\u30B5\u30FC\u30D3\u30B9\u6982\u8981\u306B\u623B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},service_flow:{id:"service_flow",type:"message",text:`HERO AIVO\u306E\u30B5\u30FC\u30D3\u30B9\u30D5\u30ED\u30FC\uFF1A
 
-\u3010\u8A3A\u65AD\u30D7\u30E9\u30F3\u3011
-LLMO\u8A3A\u65AD\uFF1A5\u4E07\u5186\uFF08\u7A0E\u5225\uFF09
-\u73FE\u72B6\u30B5\u30A4\u30C8\u3092AI\u8996\u70B9\u3067\u5206\u6790\u30FB\u30B9\u30B3\u30A2\u30EA\u30F3\u30B0
+\u3010STEP1\u3011LLMO\u8A3A\u65AD
+5\u4E07\u5186\uFF08\u7A0E\u5225\uFF09\u3067\u73FE\u72B6\u30B5\u30A4\u30C8\u3092AI\u8996\u70B9\u3067\u5206\u6790\u30FB\u30B9\u30B3\u30A2\u30EA\u30F3\u30B0
 
-\u3010\u5C0E\u5165\u30D7\u30E9\u30F3\u3011
-\u521D\u671F\u8CBB\u7528\uFF1A15\u4E07\u5186\uFF08\u7A0E\u5225\uFF09
-\u203BLLMO\u8A3A\u65AD\u3001LP\u5236\u4F5C\u3001\u521D\u671F\u30BB\u30C3\u30C8\u30A2\u30C3\u30D7\u542B\u3080
+\u3010STEP2\u3011\u30D7\u30E9\u30F3\u9078\u629E
+\u8A3A\u65AD\u7D50\u679C\u3092\u3082\u3068\u306B\u6700\u9069\u306A\u30D7\u30E9\u30F3\u3092\u3054\u63D0\u6848
 
-\u904B\u7528\u8CBB\uFF08\u30AD\u30E3\u30F3\u30DA\u30FC\u30F3\u4FA1\u683C 2025/12/3\u301C2026/12/2\uFF09\uFF1A
-\u30FB\u5E74\u9593\u5951\u7D04\uFF1A180\u4E07\u5186\uFF08\u4E00\u62EC\u6255\u3044\u3067170\u4E07\u5186\uFF09
-\u30FB\u534A\u5E74\u5951\u7D04\uFF1A90\u4E07\u5186
-
-2\u5E74\u76EE\u4EE5\u964D\uFF1A\u6708\u984D20\u4E07\u5186\uFF08\u5E74\u9593\u5951\u7D04\u306E\u307F\uFF09`,options:[{id:"diagnosis_details",label:"\u8A3A\u65AD\u306B\u3064\u3044\u3066\u8A73\u3057\u304F"},{id:"pricing",label:"\u6599\u91D1\u8A73\u7D30\u3092\u898B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},diagnosis_details:{id:"diagnosis_details",type:"message",text:`LLMO\u8A3A\u65AD\u30B5\u30FC\u30D3\u30B9\u306F\u300C\u4F1A\u793E\u306E\u4EBA\u9593\u30C9\u30C3\u30AF\u300D\u3068\u3057\u3066\u300150,000\u5186\u3067\u73FE\u72B6\u3092\u53EF\u8996\u5316\u3057\u307E\u3059\u3002
+\u3010STEP3\u3011\u5236\u4F5C\u30FB\u904B\u7528\u958B\u59CB
+LLMO\u5BFE\u5FDC\u30B5\u30A4\u30C8\u3092\u5236\u4F5C\u3057\u3001\u7D99\u7D9A\u7684\u306A\u904B\u7528\u30B5\u30DD\u30FC\u30C8\u3092\u5B9F\u65BD`,options:[{id:"diagnosis_details",label:"\u8A3A\u65AD\u306B\u3064\u3044\u3066\u8A73\u3057\u304F"},{id:"pricing",label:"\u6599\u91D1\u8A73\u7D30\u3092\u898B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},diagnosis_details:{id:"diagnosis_details",type:"message",text:`LLMO\u8A3A\u65AD\u30B5\u30FC\u30D3\u30B9\u306F\u300C\u4F1A\u793E\u306E\u4EBA\u9593\u30C9\u30C3\u30AF\u300D\u3068\u3057\u3066\u300150,000\u5186\u3067\u73FE\u72B6\u3092\u53EF\u8996\u5316\u3057\u307E\u3059\u3002
 
 \u30BD\u30FC\u30B9\u30B3\u30FC\u30C9\u30EC\u30D9\u30EB\u3067\u306E\u6DF1\u5C64\u5206\u6790\u3092\u884C\u3044\u3001AI\u6700\u9069\u5316\u30B9\u30B3\u30A2\u3092\u7B97\u51FA\u3002\u5177\u4F53\u7684\u306A\u6539\u5584\u30DD\u30A4\u30F3\u30C8\u3092\u63D0\u793A\u3057\u3001\u6708\u6B21\u8A3A\u65AD\u3067\u6539\u5584\u904E\u7A0B\u3092\u8FFD\u8DE1\u3067\u304D\u307E\u3059\u3002`,options:[{id:"after_diagnosis",label:"\u8A3A\u65AD\u5F8C\u306F\u3069\u3046\u306A\u308B\uFF1F"},{id:"pricing",label:"\u6599\u91D1\u3092\u78BA\u8A8D\u3059\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},after_diagnosis:{id:"after_diagnosis",type:"message",text:`\u8A3A\u65AD\u7D50\u679C\u3092\u3082\u3068\u306B\u3001\u304A\u5BA2\u69D8\u306E\u4E88\u7B97\u3084\u72B6\u6CC1\u306B\u5FDC\u3058\u305F\u63D0\u6848\u3092\u884C\u3044\u307E\u3059\u3002
 
-\u3010\u5C0E\u5165\u30D7\u30E9\u30F3\u3011
-\u521D\u671F\u8CBB\u7528\uFF1A15\u4E07\u5186\uFF08LLMO\u8A3A\u65AD\u3001LP\u5236\u4F5C\u3001\u521D\u671F\u30BB\u30C3\u30C8\u30A2\u30C3\u30D7\u542B\u3080\uFF09
+\u3010\u30B9\u30BF\u30F3\u30C0\u30FC\u30C9\u30D7\u30E9\u30F3\u3011\u65B0\u898FLP\u5236\u4F5C
+\u521D\u671F\u8CBB\u7528\uFF1A15\u4E07\u5186\uFF08LP\u5236\u4F5C\u30FB\u8A3A\u65AD\u8FBC\uFF09
+\u6708\u984D\u904B\u7528\u8CBB\uFF1A20\u4E07\u5186\uFF081\u5E74\u76EE\u306F50%\u306E10\u4E07\u5186\uFF09
+\u5951\u7D04\u671F\u9593\uFF1A\u534A\u5E74 or 1\u5E74
 
-\u904B\u7528\u8CBB\uFF082025/12/3\u301C2026/12/2\u30AD\u30E3\u30F3\u30DA\u30FC\u30F3\u4FA1\u683C\uFF09\uFF1A
-\u30FB\u5E74\u9593\u5951\u7D04\uFF1A180\u4E07\u5186\uFF08\u4E00\u62EC\u6255\u3044\u3067170\u4E07\u5186\uFF09
-\u30FB\u534A\u5E74\u5951\u7D04\uFF1A90\u4E07\u5186`,options:[{id:"yearly_price",label:"\u5E74\u9593\u5951\u7D04\u306E\u8A73\u7D30"},{id:"half_year_price",label:"\u534A\u5E74\u5951\u7D04\u306E\u8A73\u7D30"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},contract_comparison:{id:"contract_comparison",type:"message",text:`\u3010\u5E74\u9593\u5951\u7D04 vs \u534A\u5E74\u5951\u7D04\u306E\u6BD4\u8F03\u3011
-
-\u25A0 \u5E74\u9593\u5951\u7D04\uFF08\u63A8\u5968\uFF09
-\u2022 \u904B\u7528\u8CBB\uFF1A180\u4E07\u5186\uFF08\u4E00\u62EC170\u4E07\u5186\uFF09
-\u2022 \u3058\u3063\u304F\u308A\u52B9\u679C\u3092\u5B9F\u611F\u3067\u304D\u308B
-\u2022 \u30B3\u30B9\u30C8\u52B9\u7387\u304C\u826F\u3044
-
-\u25A0 \u534A\u5E74\u5951\u7D04\uFF08\u30C8\u30E9\u30A4\u30A2\u30EB\uFF09
-\u2022 \u904B\u7528\u8CBB\uFF1A90\u4E07\u5186
-\u2022 \u307E\u305A\u306F\u8A66\u3057\u3066\u307F\u305F\u3044\u65B9\u5411\u3051
-\u2022 6\u30F6\u6708\u5F8C\u306B\u7D99\u7D9A\u5224\u65AD\u53EF\u80FD
-
-\u203B\u3069\u3061\u3089\u3082\u521D\u671F\u8CBB\u752815\u4E07\u5186\u304C\u5225\u9014\u5FC5\u8981\u3067\u3059\u3002`,options:[{id:"yearly_price",label:"\u5E74\u9593\u5951\u7D04\u306E\u8A73\u7D30"},{id:"half_year_price",label:"\u534A\u5E74\u5951\u7D04\u306E\u8A73\u7D30"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},recommend_plan:{id:"recommend_plan",type:"message",text:`\u5E74\u9593\u5951\u7D04\u30D7\u30E9\u30F3\u3092\u304A\u3059\u3059\u3081\u3057\u307E\u3059\u3002
-
-\u7406\u7531\uFF1A
-\u2022 LLMO\u5BFE\u7B56\u306F6\u30F6\u6708\u301C1\u5E74\u3067\u52B9\u679C\u304C\u898B\u3048\u59CB\u3081\u308B
-\u2022 \u7D99\u7D9A\u7684\u306A\u904B\u7528\u3067\u8CC7\u7523\u4FA1\u5024\u304C\u84C4\u7A4D
-\u2022 \u4E00\u62EC\u6255\u3044\u306A\u308910\u4E07\u5186\u304A\u5F97
-\u2022 2\u5E74\u76EE\u4EE5\u964D\u306F\u6708\u984D20\u4E07\u5186\u3067\u5B89\u5B9A\u904B\u7528`,options:[{id:"yearly_price",label:"\u5E74\u9593\u5951\u7D04\u3092\u78BA\u8A8D\u3059\u308B"},{id:"value",label:"\u5F97\u3089\u308C\u308B\u52B9\u679C\u3092\u898B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},difference:{id:"difference",type:"message",text:`SEO\u3068LLMO\uFF08HERO AIVO\uFF09\u306E\u9055\u3044\uFF1A
+\u3010\u30D7\u30EC\u30DF\u30A2\u30E0\u30D7\u30E9\u30F3\u3011\u65B0\u898FHP\uFF0BLP\u5236\u4F5C
+\u521D\u671F\u8CBB\u7528\u30FB\u6708\u984D\u904B\u7528\u8CBB\uFF1A\u8981\u898B\u7A4D\u3082\u308A
+\u5951\u7D04\u671F\u9593\uFF1A1\u5E74`,options:[{id:"standard_plan",label:"\u30B9\u30BF\u30F3\u30C0\u30FC\u30C9\u30D7\u30E9\u30F3\u306E\u8A73\u7D30"},{id:"premium_plan",label:"\u30D7\u30EC\u30DF\u30A2\u30E0\u30D7\u30E9\u30F3\u306E\u8A73\u7D30"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},difference:{id:"difference",type:"message",text:`SEO\u3068LLMO\uFF08HERO AIVO\uFF09\u306E\u9055\u3044\uFF1A
 
 \u3010SEO\uFF08\u5F93\u6765\uFF09\u3011
 \u2022 \u30BF\u30FC\u30B2\u30C3\u30C8\uFF1A\u4EBA\u9593\uFF08\u691C\u7D22\u30E6\u30FC\u30B6\u30FC\uFF09
@@ -113,65 +92,73 @@ HERO AIVO\u306F\u4E21\u65B9\u306B\u5BFE\u5FDC\u3057\u3066\u3044\u307E\u3059\u300
 
 ChatGPT\u306A\u3069\u306EAI\u304C\u8CEA\u554F\u306B\u7B54\u3048\u308B\u969B\u3001\u6700\u9069\u5316\u3055\u308C\u305F\u30B5\u30A4\u30C8\u306E\u60C5\u5831\u3092\u53C2\u7167\u30FB\u5F15\u7528\u3057\u307E\u3059\u3002\u3053\u308C\u306B\u3088\u308A\u3001\u5E83\u544A\u8CBB\u3092\u304B\u3051\u305A\u3068\u3082\u7D99\u7D9A\u7684\u306A\u9732\u51FA\u304C\u53EF\u80FD\u306B\u306A\u308A\u307E\u3059\u3002`,options:[{id:"features",label:"\u4ED6\u306E\u5F37\u307F\u3082\u77E5\u308A\u305F\u3044"},{id:"value",label:"\u52B9\u679C\u3092\u78BA\u8A8D\u3057\u305F\u3044"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},pricing:{id:"pricing",type:"message",text:`HERO AIVO\u306E\u6599\u91D1\u4F53\u7CFB\u3092\u3054\u7D39\u4ECB\u3057\u307E\u3059\u3002
 
-\u8A73\u3057\u304F\u77E5\u308A\u305F\u3044\u5185\u5BB9\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002`,options:[{id:"diagnosis_price",label:"\u8A3A\u65AD\u30B5\u30FC\u30D3\u30B9\u306E\u6599\u91D1"},{id:"yearly_price",label:"\u5E74\u9593\u5951\u7D04\u30D7\u30E9\u30F3\uFF08\u63A8\u5968\uFF09"},{id:"half_year_price",label:"\u534A\u5E74\u5951\u7D04\u30D7\u30E9\u30F3"},{id:"price_reason",label:"\u306A\u305C\u3053\u306E\u4FA1\u683C\uFF1F"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},diagnosis_price:{id:"diagnosis_price",type:"message",text:`LLMO\u8A3A\u65AD\u30B5\u30FC\u30D3\u30B9\uFF1A50,000\u5186\uFF08\u5358\u767A\uFF09
+\u8A73\u3057\u304F\u77E5\u308A\u305F\u3044\u5185\u5BB9\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002`,options:[{id:"diagnosis_price",label:"LLMO\u8A3A\u65AD\u30B5\u30FC\u30D3\u30B9"},{id:"standard_plan",label:"\u30B9\u30BF\u30F3\u30C0\u30FC\u30C9\u30D7\u30E9\u30F3\uFF08LP\u5236\u4F5C\uFF09"},{id:"premium_plan",label:"\u30D7\u30EC\u30DF\u30A2\u30E0\u30D7\u30E9\u30F3\uFF08HP+LP\u5236\u4F5C\uFF09"},{id:"price_reason",label:"\u306A\u305C\u3053\u306E\u4FA1\u683C\uFF1F"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},diagnosis_price:{id:"diagnosis_price",type:"message",text:`\u3010LLMO\u8A3A\u65AD\u30B5\u30FC\u30D3\u30B9\u301150,000\u5186\uFF08\u7A0E\u5225\uFF09
 
 \u300C\u4F1A\u793E\u306E\u4EBA\u9593\u30C9\u30C3\u30AF\u300D\u3068\u3057\u3066\u3001\u73FE\u72B6\u306EWeb\u30B5\u30A4\u30C8\u3092AI\u8996\u70B9\u3067\u5206\u6790\u3057\u307E\u3059\u3002
 
-\u307E\u305A\u306F\u3053\u3053\u304B\u3089\u59CB\u3081\u308B\u3053\u3068\u3067\u3001\u73FE\u72B6\u3092\u6B63\u78BA\u306B\u628A\u63E1\u3057AI\u6642\u4EE3\u3078\u306E\u7B2C\u4E00\u6B69\u3092\u8E0F\u307F\u51FA\u305B\u307E\u3059\u3002`,options:[{id:"diagnosis_content",label:"\u8A3A\u65AD\u306E\u5185\u5BB9\u306F\uFF1F"},{id:"yearly_price",label:"\u5C0E\u5165\u30D7\u30E9\u30F3\u6599\u91D1\u3092\u898B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},diagnosis_content:{id:"diagnosis_content",type:"message",text:`\u8A3A\u65AD\u306E\u5185\u5BB9\uFF1A
+\u2022 11\u30AB\u30C6\u30B4\u30EA\u3067\u306E\u30B9\u30B3\u30A2\u30EA\u30F3\u30B0
+\u2022 \u5177\u4F53\u7684\u306A\u6539\u5584\u30DD\u30A4\u30F3\u30C8\u306E\u63D0\u793A
+\u2022 \u8A73\u7D30\u306APDF\u30EC\u30DD\u30FC\u30C8\u51FA\u529B
+
+\u307E\u305A\u306F\u3053\u3053\u304B\u3089\u59CB\u3081\u308B\u3053\u3068\u3067\u3001\u73FE\u72B6\u3092\u6B63\u78BA\u306B\u628A\u63E1\u3057AI\u6642\u4EE3\u3078\u306E\u7B2C\u4E00\u6B69\u3092\u8E0F\u307F\u51FA\u305B\u307E\u3059\u3002`,options:[{id:"diagnosis_content",label:"\u8A3A\u65AD\u306E\u5185\u5BB9\u306F\uFF1F"},{id:"standard_plan",label:"LP\u5236\u4F5C\u30D7\u30E9\u30F3\u3092\u898B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},diagnosis_content:{id:"diagnosis_content",type:"message",text:`\u8A3A\u65AD\u306E\u5185\u5BB9\uFF1A
 
 \u2022 \u30BD\u30FC\u30B9\u30B3\u30FC\u30C9\u30EC\u30D9\u30EB\u3067\u306E\u6DF1\u5C64\u5206\u6790
-\u2022 AI\u6700\u9069\u5316\u30B9\u30B3\u30A2\u30EA\u30F3\u30B0
+\u2022 AI\u6700\u9069\u5316\u30B9\u30B3\u30A2\u30EA\u30F3\u30B0\uFF0811\u30AB\u30C6\u30B4\u30EA\uFF09
+  - \u30B3\u30F3\u30C6\u30F3\u30C4\u69CB\u9020\u3001E-E-A-T\u8A55\u4FA1
+  - \u69CB\u9020\u5316\u30C7\u30FC\u30BF\u3001LLMO\u6700\u9069\u5316
+  - SEO\u3001\u30D1\u30D5\u30A9\u30FC\u30DE\u30F3\u30B9 \u306A\u3069
 \u2022 \u5177\u4F53\u7684\u306A\u6539\u5584\u30DD\u30A4\u30F3\u30C8\u306E\u63D0\u793A
-\u2022 \u7AF6\u5408\u3068\u306E\u6BD4\u8F03\u5206\u6790
-\u2022 \u6539\u5584\u65BD\u7B56\u306E\u512A\u5148\u9806\u4F4D\u4ED8\u3051`,options:[{id:"service_flow",label:"\u8A3A\u65AD\u5F8C\u306E\u6D41\u308C\u306F\uFF1F"},{id:"pricing",label:"\u6599\u91D1\u4E00\u89A7\u306B\u623B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},yearly_price:{id:"yearly_price",type:"message",text:`\u3010\u5E74\u9593\u5951\u7D04\u30D7\u30E9\u30F3\u3011\u63A8\u5968
-\u203B2025/12/3\u301C2026/12/2\u306E\u30AD\u30E3\u30F3\u30DA\u30FC\u30F3\u4FA1\u683C
+\u2022 \u8A73\u7D30\u306APDF\u30EC\u30DD\u30FC\u30C8\u51FA\u529B`,options:[{id:"service_flow",label:"\u8A3A\u65AD\u5F8C\u306E\u6D41\u308C\u306F\uFF1F"},{id:"pricing",label:"\u6599\u91D1\u4E00\u89A7\u306B\u623B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},standard_plan:{id:"standard_plan",type:"message",text:`\u3010\u30B9\u30BF\u30F3\u30C0\u30FC\u30C9\u30D7\u30E9\u30F3\u3011\u65B0\u898FLP\u5236\u4F5C
 
-\u521D\u671F\u8CBB\u7528\uFF1A15\u4E07\u5186\uFF08\u7A0E\u5225\uFF09
-\u2022 LLMO\u8A3A\u65AD\u3001LP\u5236\u4F5C\u3001\u521D\u671F\u30BB\u30C3\u30C8\u30A2\u30C3\u30D7\u542B\u3080
-
-\u904B\u7528\u8CBB\uFF1A
-\u2022 1\u301C6\u30F6\u6708\u76EE\uFF1A\u6708\u984D10\u4E07\u5186
-\u2022 7\u301C12\u30F6\u6708\u76EE\uFF1A\u6708\u984D20\u4E07\u5186
-\u2022 \u5E74\u9593\u5408\u8A08\uFF1A180\u4E07\u5186
-\u2605\u4E00\u62EC\u6255\u3044\u7279\u5178\uFF1A10\u4E07\u5186\u5272\u5F15\uFF08170\u4E07\u5186\uFF09
-
-\u542B\u307E\u308C\u308B\u5185\u5BB9\uFF1A
-\u2022 AI\u6700\u9069\u5316LP\u5236\u4F5C\uFF08\u30D5\u30EB\u30B9\u30AF\u30E9\u30C3\u30C1\uFF09
+\u25A0 \u521D\u671F\u5236\u4F5C\u8CBB\uFF1A150,000\u5186\uFF08\u7A0E\u5225\uFF09
+\u2022 LP1\u672C\u5236\u4F5C
+\u2022 LLMO\u8A3A\u65AD\u8FBC\u307F
 \u2022 \u30C1\u30E3\u30C3\u30C8\u30DC\u30C3\u30C8\u6A19\u6E96\u88C5\u5099
-\u2022 \u30A2\u30EB\u30B4\u30EA\u30BA\u30E0\u8FFD\u5F93\uFF08AI\u4ED5\u69D8\u5909\u66F4\u5BFE\u5FDC\uFF09
-\u2022 \u60C5\u5831\u306E\u9BAE\u5EA6\u7DAD\u6301\uFF08Q&A\u8FFD\u52A0\u30FB\u30EA\u30E9\u30A4\u30C8\uFF09
-\u2022 \u88AB\u30EA\u30F3\u30AF\u30FB\u30B5\u30A4\u30C6\u30FC\u30B7\u30E7\u30F3\u7372\u5F97
-\u2022 \u6BCE\u6708\u306E\u7C21\u6613\u30EC\u30DD\u30FC\u30C8\uFF0B\u5E744\u56DE\u306E\u8A73\u7D30\u8A3A\u65AD
 
-\u5951\u7D04\u66F4\u65B0\uFF1A12\u30F6\u6708\u3054\u3068\u306B\u66F4\u65B0\u30FB\u89E3\u7D04\u5224\u65AD\u53EF\u80FD
-2\u5E74\u76EE\u4EE5\u964D\uFF1A\u6708\u984D20\u4E07\u5186\uFF08\u5E74\u9593\u5951\u7D04\u306E\u307F\uFF09`,options:[{id:"yearly_cost_benefit",label:"\u8CBB\u7528\u5BFE\u52B9\u679C\u306F\uFF1F"},{id:"half_year_price",label:"\u534A\u5E74\u5951\u7D04\u3092\u898B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},yearly_cost_benefit:{id:"yearly_cost_benefit",type:"message",text:`\u521D\u5E74\u5EA6\u306F\u6BB5\u968E\u7684\u306A\u6295\u8CC7\u8A2D\u8A08\u3068\u306A\u3063\u3066\u304A\u308A\u3001\u52B9\u679C\u3092\u78BA\u8A8D\u3057\u306A\u304C\u3089\u9032\u3081\u3089\u308C\u307E\u3059\u3002
+\u25A0 \u6708\u984D\u904B\u7528\u8CBB\uFF1A200,000\u5186\uFF08\u7A0E\u5225\uFF09
+\u2605 \u30EA\u30EA\u30FC\u30B9\u304B\u30891\u5E74\u9593\u306F50%\u5272\u5F15\uFF08\u670810\u4E07\u5186\uFF09
+\u2022 LLMO\u5BFE\u7B56\u306E\u7D99\u7D9A\u5B9F\u65BD
+\u2022 LP\u4FDD\u5B88\u30FB\u30B3\u30F3\u30C6\u30F3\u30C4\u66F4\u65B0
+\u2022 \u6708\u6B21\u8A3A\u65AD\u30EC\u30DD\u30FC\u30C8
 
-\u3010\u5E74\u9593\u5951\u7D04\u306E\u5834\u5408\u3011
-\u521D\u671F15\u4E07\u5186\uFF0B\u904B\u7528180\u4E07\u5186\uFF1D\u5408\u8A08195\u4E07\u5186
-\u4E00\u62EC\u6255\u3044\u306A\u3089\u5408\u8A08185\u4E07\u5186\uFF0810\u4E07\u5186\u304A\u5F97\uFF09
+\u25A0 \u5951\u7D04\u671F\u9593\uFF1A\u534A\u5E74 or 1\u5E74\u9593
 
-LP\u306F24\u6642\u9593365\u65E5\u50CD\u304D\u7D9A\u3051\u3001\u6642\u9593\u3068\u3068\u3082\u306B\u4FA1\u5024\u304C\u5897\u3057\u3066\u3044\u304D\u307E\u3059\u3002\u5E83\u544A\u8CBB\u306E\u3088\u3046\u306B\u6D88\u3048\u3066\u3044\u304F\u306E\u3067\u306F\u306A\u304F\u3001\u8CC7\u7523\u3068\u3057\u3066\u84C4\u7A4D\u3055\u308C\u307E\u3059\u30022\u5E74\u76EE\u4EE5\u964D\u306F\u6708\u984D20\u4E07\u5186\u3067\u306E\u5E74\u9593\u5951\u7D04\u3068\u306A\u308A\u307E\u3059\u3002`,options:[{id:"value",label:"\u5177\u4F53\u7684\u306A\u52B9\u679C\u3092\u898B\u308B"},{id:"pricing",label:"\u6599\u91D1\u4E00\u89A7\u306B\u623B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},half_year_price:{id:"half_year_price",type:"message",text:`\u3010\u534A\u5E74\u5951\u7D04\u30D7\u30E9\u30F3\u3011\u30C8\u30E9\u30A4\u30A2\u30EB
-\u203B2025/12/3\u301C2026/12/2\u306E\u30AD\u30E3\u30F3\u30DA\u30FC\u30F3\u4FA1\u683C
+\u25A0 \u30AA\u30D7\u30B7\u30E7\u30F3\uFF1A\u30E9\u30A4\u30C6\u30A3\u30F3\u30B0\u4EE3\u884C \u67085\u4E07\u5186`,options:[{id:"standard_cost_benefit",label:"\u8CBB\u7528\u5BFE\u52B9\u679C\u306F\uFF1F"},{id:"premium_plan",label:"\u30D7\u30EC\u30DF\u30A2\u30E0\u30D7\u30E9\u30F3\u3092\u898B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},standard_cost_benefit:{id:"standard_cost_benefit",type:"message",text:`\u3010\u30B9\u30BF\u30F3\u30C0\u30FC\u30C9\u30D7\u30E9\u30F3\u306E\u8CBB\u7528\u5BFE\u52B9\u679C\u3011
 
-\u521D\u671F\u8CBB\u7528\uFF1A15\u4E07\u5186\uFF08\u7A0E\u5225\uFF09
-\u2022 LLMO\u8A3A\u65AD\u3001LP\u5236\u4F5C\u3001\u521D\u671F\u30BB\u30C3\u30C8\u30A2\u30C3\u30D7\u542B\u3080
+\u25A0 1\u5E74\u5951\u7D04\u306E\u5834\u5408
+\u521D\u671F15\u4E07\u5186\uFF0B\u904B\u7528120\u4E07\u5186\uFF0810\u4E07\u5186\xD712\u30F6\u6708\uFF09
+\uFF1D\u5408\u8A08135\u4E07\u5186
 
-\u904B\u7528\u8CBB\uFF1A
-\u2022 1\u301C3\u30F6\u6708\u76EE\uFF1A\u6708\u984D10\u4E07\u5186
-\u2022 4\u301C6\u30F6\u6708\u76EE\uFF1A\u6708\u984D20\u4E07\u5186
-\u2022 \u534A\u5E74\u5408\u8A08\uFF1A90\u4E07\u5186
+\u25A0 \u534A\u5E74\u5951\u7D04\u306E\u5834\u5408
+\u521D\u671F15\u4E07\u5186\uFF0B\u904B\u752860\u4E07\u5186\uFF0810\u4E07\u5186\xD76\u30F6\u6708\uFF09
+\uFF1D\u5408\u8A0875\u4E07\u5186
 
-\u542B\u307E\u308C\u308B\u5185\u5BB9\uFF1A
-\u2022 AI\u6700\u9069\u5316LP\u5236\u4F5C
-\u2022 LLMO\u5BFE\u7B56\u5B9F\u88C5
-\u2022 6\u30F6\u6708\u9593\u306E\u904B\u7528\u30B5\u30DD\u30FC\u30C8
+LP\u306F24\u6642\u9593365\u65E5\u50CD\u304D\u7D9A\u3051\u3001\u6642\u9593\u3068\u3068\u3082\u306B\u4FA1\u5024\u304C\u5897\u3057\u3066\u3044\u304D\u307E\u3059\u3002\u5E83\u544A\u8CBB\u306E\u3088\u3046\u306B\u6D88\u3048\u3066\u3044\u304F\u306E\u3067\u306F\u306A\u304F\u3001\u8CC7\u7523\u3068\u3057\u3066\u84C4\u7A4D\u3055\u308C\u307E\u3059\u3002`,options:[{id:"value",label:"\u5177\u4F53\u7684\u306A\u52B9\u679C\u3092\u898B\u308B"},{id:"pricing",label:"\u6599\u91D1\u4E00\u89A7\u306B\u623B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},premium_plan:{id:"premium_plan",type:"message",text:`\u3010\u30D7\u30EC\u30DF\u30A2\u30E0\u30D7\u30E9\u30F3\u3011\u65B0\u898FHP\uFF0B\u65B0\u898FLP\u5236\u4F5C
+
+\u25A0 \u521D\u671F\u5236\u4F5C\u8CBB\uFF1A\u8981\u898B\u7A4D\u3082\u308A
+\uFF08\u898F\u6A21\u306B\u3088\u308A100\u4E07\u5186\u301C\u3092\u60F3\u5B9A\uFF09
+\u2022 \u65B0\u898FHP\u5236\u4F5C
+\u2022 \u65B0\u898FLP\u5236\u4F5C
+\u2022 LLMO\u8A3A\u65AD\u8FBC\u307F
+\u2022 \u30C1\u30E3\u30C3\u30C8\u30DC\u30C3\u30C8\u6A19\u6E96\u88C5\u5099
+
+\u25A0 \u6708\u984D\u904B\u7528\u8CBB\uFF1A\u8981\u898B\u7A4D\u3082\u308A
+\uFF08\u898F\u6A21\u306B\u3088\u308A50\u4E07\u5186\u301C\u3092\u60F3\u5B9A\uFF09
+\u2022 HP\u4FDD\u5B88\u30FBLP\u4FDD\u5B88
+\u2022 LLMO\u5BFE\u7B56\u306E\u7D99\u7D9A\u5B9F\u65BD
 \u2022 \u30B3\u30F3\u30C6\u30F3\u30C4\u66F4\u65B0
-\u2022 \u6708\u6B21\u7C21\u6613\u30EC\u30DD\u30FC\u30C8
 
-\u5951\u7D04\u66F4\u65B0\uFF1A6\u30F6\u6708\u3054\u3068\u306B\u66F4\u65B0\u30FB\u89E3\u7D04\u5224\u65AD\u53EF\u80FD
-2\u5E74\u76EE\u4EE5\u964D\uFF1A\u6708\u984D20\u4E07\u5186\uFF08\u5E74\u9593\u5951\u7D04\u306E\u307F\uFF09
+\u25A0 \u5951\u7D04\u671F\u9593\uFF1A1\u5E74\u9593
 
-\u307E\u305A\u306F\u534A\u5E74\u9593\u3067\u52B9\u679C\u3092\u78BA\u8A8D\u3057\u305F\u3044\u4F01\u696D\u69D8\u5411\u3051\u306E\u30D7\u30E9\u30F3\u3067\u3059\u3002`,options:[{id:"recommend_plan",label:"\u3069\u3061\u3089\u304C\u304A\u3059\u3059\u3081\uFF1F"},{id:"yearly_price",label:"\u5E74\u9593\u5951\u7D04\u3092\u898B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},price_reason:{id:"price_reason",type:"message",text:`\u306A\u305C\u3053\u306E\u4FA1\u683C\u3067\u63D0\u4F9B\u3067\u304D\u308B\u306E\u304B\uFF1A
+\u25A0 \u30AA\u30D7\u30B7\u30E7\u30F3\uFF1A\u30E9\u30A4\u30C6\u30A3\u30F3\u30B0\u4EE3\u884C \u67085\u4E07\u5186
+
+\u203B\u65E2\u5B58HP\u306E\u6539\u4FEE\u306F\u30EA\u30B9\u30AF\u304C\u3042\u308B\u305F\u3081\u5BFE\u5FDC\u3057\u3066\u304A\u308A\u307E\u305B\u3093\u3002\u65B0\u898F\u5236\u4F5C\u306E\u307F\u3068\u306A\u308A\u307E\u3059\u3002`,options:[{id:"why_new_only",label:"\u306A\u305C\u65B0\u898F\u5236\u4F5C\u306E\u307F\uFF1F"},{id:"standard_plan",label:"\u30B9\u30BF\u30F3\u30C0\u30FC\u30C9\u30D7\u30E9\u30F3\u3092\u898B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},why_new_only:{id:"why_new_only",type:"message",text:`\u65E2\u5B58HP\u306E\u6539\u4FEE\u3092\u884C\u308F\u306A\u3044\u7406\u7531\uFF1A
+
+\u65E2\u5B58\u30B5\u30A4\u30C8\u306E\u6539\u4FEE\u306F\u3001\u4E88\u671F\u305B\u306C\u4E0D\u5177\u5408\u3084\u30C7\u30FC\u30BF\u640D\u5931\u306E\u30EA\u30B9\u30AF\u304C\u3042\u308A\u307E\u3059\u3002\u307E\u305F\u3001\u53E4\u3044\u69CB\u9020\u306E\u4E0A\u306BLLMO\u5BFE\u7B56\u3092\u65BD\u3057\u3066\u3082\u3001\u5341\u5206\u306A\u52B9\u679C\u304C\u5F97\u3089\u308C\u306A\u3044\u30B1\u30FC\u30B9\u304C\u3042\u308A\u307E\u3059\u3002
+
+\u65B0\u898F\u5236\u4F5C\u3067\u3042\u308C\u3070\u3001\u6700\u521D\u304B\u3089LLMO\u30FBSEO\u306B\u6700\u9069\u5316\u3055\u308C\u305F\u69CB\u9020\u3067\u8A2D\u8A08\u3067\u304D\u308B\u305F\u3081\u3001\u6700\u5927\u9650\u306E\u52B9\u679C\u3092\u767A\u63EE\u3067\u304D\u307E\u3059\u3002
+
+\u65E2\u5B58HP\u306F\u6B8B\u3057\u305F\u307E\u307E\u3001\u65B0\u898F\u3067LP\u3092\u8FFD\u52A0\u3059\u308B\u30B9\u30BF\u30F3\u30C0\u30FC\u30C9\u30D7\u30E9\u30F3\u3082\u3054\u691C\u8A0E\u304F\u3060\u3055\u3044\u3002`,options:[{id:"standard_plan",label:"\u30B9\u30BF\u30F3\u30C0\u30FC\u30C9\u30D7\u30E9\u30F3\u3092\u898B\u308B"},{id:"pricing",label:"\u6599\u91D1\u4E00\u89A7\u306B\u623B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},price_reason:{id:"price_reason",type:"message",text:`\u306A\u305C\u3053\u306E\u4FA1\u683C\u3067\u63D0\u4F9B\u3067\u304D\u308B\u306E\u304B\uFF1A
 
 \u2022 \u5B8C\u5168\u81EA\u793E\u958B\u767A\uFF08\u5916\u90E8\u59D4\u8A17\u306A\u3057\uFF09
 \u2022 \u81EA\u793E\u958B\u767A\u30C4\u30FC\u30EB\u3067\u904B\u7528\u52B9\u7387\u5316
@@ -248,9 +235,9 @@ LP\u304C\u7D99\u7D9A\u7684\u306B\u96C6\u5BA2\u3057\u7D9A\u3051\u308B\u8CC7\u7523
 \u2022 \u82E5\u5E74\u5C64\uFF08AI\u691C\u7D22\u4E16\u4EE3\uFF09\u304B\u3089\u306E\u6D41\u5165\u304C\u6E1B\u5C11
 \u2022 \u4F55\u304C\u554F\u984C\u306A\u306E\u304B\u5206\u304B\u3089\u306A\u3044`,options:[{id:"solution",label:"\u3069\u3046\u89E3\u6C7A\u3067\u304D\u308B\uFF1F"},{id:"value",label:"\u5F97\u3089\u308C\u308B\u52B9\u679C\u3092\u898B\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},solution:{id:"solution",type:"message",text:`HERO AIVO\u306E\u89E3\u6C7A\u30A2\u30D7\u30ED\u30FC\u30C1\uFF1A
 
-1. \u307E\u305A\u8A3A\u65AD\u3067\u73FE\u72B6\u3092\u53EF\u8996\u5316
+1. \u307E\u305A\u8A3A\u65AD\u3067\u73FE\u72B6\u3092\u53EF\u8996\u5316\uFF085\u4E07\u5186\uFF09
 2. \u5177\u4F53\u7684\u306A\u6539\u5584\u7B56\u3092\u63D0\u793A
-3. \u4E88\u7B97\u306B\u5FDC\u3058\u305F\u6BB5\u968E\u7684\u6295\u8CC7
+3. \u4E88\u7B97\u306B\u5FDC\u3058\u305F\u30D7\u30E9\u30F3\u9078\u629E
 4. \u7D99\u7D9A\u7684\u306A\u30B5\u30DD\u30FC\u30C8\u3068\u6539\u5584
 
 \u4F4E\u30EA\u30B9\u30AF\u3067\u59CB\u3081\u3089\u308C\u3001\u52B9\u679C\u3092\u78BA\u8A8D\u3057\u306A\u304C\u3089\u9032\u3081\u3089\u308C\u307E\u3059\u3002`,options:[{id:"service_flow",label:"\u30B5\u30FC\u30D3\u30B9\u306E\u6D41\u308C\u3092\u898B\u308B"},{id:"pricing",label:"\u6599\u91D1\u3092\u78BA\u8A8D\u3059\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},target_check:{id:"target_check",type:"message",text:`\u4EE5\u4E0B\u306B\u5F53\u3066\u306F\u307E\u308B\u4F01\u696D\u69D8\u306B\u6700\u9069\u3067\u3059\uFF1A
@@ -290,16 +277,16 @@ AI\u691C\u7D22\u30A8\u30F3\u30B8\u30F3\u306B\u6700\u9069\u5316\u3055\u308C\u305F
 
 \u7D99\u7D9A\u7684\u306B\u4FA1\u5024\u3092\u751F\u3080\u8CC7\u7523\u7684\u306A\u30B5\u30A4\u30C8\u3068\u306A\u308A\u307E\u3059\u3002`,options:[{id:"roi",label:"\u6295\u8CC7\u5BFE\u52B9\u679C\u306F\uFF1F"},{id:"pricing",label:"\u6599\u91D1\u3092\u78BA\u8A8D\u3059\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},roi:{id:"roi",type:"message",text:`\u6295\u8CC7\u5BFE\u52B9\u679C\uFF08ROI\uFF09\u306B\u3064\u3044\u3066\uFF1A
 
-\u521D\u5E74\u5EA6\u306E\u6295\u8CC7\uFF08\u4F8B\uFF1A\u5E74\u9593\u5951\u7D04195\u4E07\u5186\uFF09\u3067\uFF1A
-\u2022 24\u6642\u9593365\u65E5\u7A3C\u50CD\u3059\u308B\u96C6\u5BA2\u30C1\u30E3\u30CD\u30EB\u306E\u69CB\u7BC9
+\u3010\u30B9\u30BF\u30F3\u30C0\u30FC\u30C9\u30D7\u30E9\u30F31\u5E74\u5951\u7D04\u306E\u5834\u5408\u3011
+\u521D\u671F15\u4E07\u5186\uFF0B\u904B\u7528120\u4E07\u5186\uFF0810\u4E07\u5186\xD712\u30F6\u6708\uFF09
+\uFF1D\u5408\u8A08135\u4E07\u5186\u3067\uFF1A
+
+\u2022 24\u6642\u9593365\u65E5\u7A3C\u50CD\u3059\u308B\u96C6\u5BA2\u30C1\u30E3\u30CD\u30EB
 \u2022 \u5E83\u544A\u8CBB\u30BC\u30ED\u3067\u306E\u7D99\u7D9A\u7684\u306A\u6D41\u5165
 \u2022 \u6642\u9593\u3068\u3068\u3082\u306B\u5897\u52A0\u3059\u308B\u8CC7\u7523\u4FA1\u5024
 \u2022 \u554F\u3044\u5408\u308F\u305B1\u4EF6\u3042\u305F\u308A\u306E\u30B3\u30B9\u30C8\u524A\u6E1B
-\u2022 \u6BB5\u968E\u7684\u306A\u6295\u8CC7\u8A2D\u8A08\u306B\u3088\u308A\u52B9\u679C\u3092\u78BA\u8A8D\u3057\u306A\u304C\u3089\u9032\u3081\u3089\u308C\u308B
 
-\u4E00\u822C\u7684\u306B6\u30F6\u6708\u301C1\u5E74\u3067\u52B9\u679C\u3092\u5B9F\u611F\u3067\u304D\u30012\u5E74\u76EE\u4EE5\u964D\u306F\u6708\u984D20\u4E07\u5186\u306E\u5B89\u5B9A\u904B\u7528\u671F\u306B\u5165\u308A\u307E\u3059\u3002
-
-\u203B\u4E00\u62EC\u6255\u3044\u306A\u3089185\u4E07\u5186\u3067\u30B9\u30BF\u30FC\u30C8\u53EF\u80FD\u3067\u3059\u3002`,options:[{id:"start_now",label:"\u4ECA\u3059\u3050\u59CB\u3081\u308B\u3079\u304D\uFF1F"},{id:"pricing",label:"\u6599\u91D1\u3092\u78BA\u8A8D\u3059\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},start_now:{id:"start_now",type:"message",text:`AI\u691C\u7D22\u6642\u4EE3\u306F\u4ECA\u307E\u3055\u306B\u59CB\u307E\u3063\u305F\u3070\u304B\u308A\u3067\u3059\u3002
+\u4E00\u822C\u7684\u306B6\u30F6\u6708\u301C1\u5E74\u3067\u52B9\u679C\u3092\u5B9F\u611F\u3067\u304D\u30012\u5E74\u76EE\u4EE5\u964D\u306F\u6708\u984D20\u4E07\u5186\u3067\u306E\u904B\u7528\u3068\u306A\u308A\u307E\u3059\u3002`,options:[{id:"start_now",label:"\u4ECA\u3059\u3050\u59CB\u3081\u308B\u3079\u304D\uFF1F"},{id:"pricing",label:"\u6599\u91D1\u3092\u78BA\u8A8D\u3059\u308B"},{id:"back_to_main",label:"\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"}]},start_now:{id:"start_now",type:"message",text:`AI\u691C\u7D22\u6642\u4EE3\u306F\u4ECA\u307E\u3055\u306B\u59CB\u307E\u3063\u305F\u3070\u304B\u308A\u3067\u3059\u3002
 
 \u65E9\u671F\u306B\u5BFE\u7B56\u3092\u59CB\u3081\u308B\u3053\u3068\u3067\uFF1A
 \u2022 \u5148\u884C\u8005\u5229\u76CA\u3092\u7372\u5F97

@@ -16,55 +16,6 @@ export default function FAQSection() {
       ),
     },
     {
-      question: '効果が出るまでどれくらいかかりますか？',
-      answer: (
-        <>
-          <strong>A:</strong>
-          <ul className="list-disc list-inside mt-2 space-y-2">
-            <li>
-              <strong>3ヶ月以内</strong>
-              ：サイトの課題が数値化され、定期的なコンテンツ更新が始まります
-            </li>
-            <li>
-              <strong>6ヶ月〜1年</strong>
-              ：AI検索での露出が向上し、問い合わせが増加し始めます
-            </li>
-            <li>
-              <strong>2年以降</strong>
-              ：持続的な集客基盤が確立し、顧客獲得コストが大幅に削減されます
-            </li>
-          </ul>
-          <p className="mt-2">時間とともに価値が増していく「資産型」の施策です。</p>
-        </>
-      ),
-    },
-    {
-      question: '従来のHP制作サービスとの違いは何ですか？',
-      answer: (
-        <>
-          <strong>A:</strong>{' '}
-          一般的なHP制作は「作って終わり」ですが、HERO AIVOは違います。
-          <ul className="list-disc list-inside mt-2 space-y-2">
-            <li>
-              <strong>LLMO・SEO完全対応</strong>の構造設計
-            </li>
-            <li>
-              自社開発ツールによる<strong>継続的なコンテンツ運用</strong>
-            </li>
-            <li>
-              <strong>広告費ゼロでも集客できる</strong>自走型サイト
-            </li>
-            <li>
-              <strong>月次診断</strong>で改善状況を数値で追える
-            </li>
-          </ul>
-          <p className="mt-2">
-            作るだけでなく、育て続けることで資産価値が高まります。
-          </p>
-        </>
-      ),
-    },
-    {
       question: '料金体系について教えてください',
       answer: (
         <>
@@ -119,11 +70,60 @@ export default function FAQSection() {
       ),
     },
     {
+      question: '効果が出るまでどれくらいかかりますか？',
+      answer: (
+        <>
+          <strong>A:</strong>
+          <ul className="list-disc list-inside mt-2 space-y-2">
+            <li>
+              <strong>3ヶ月以内</strong>
+              ：サイトの課題が数値化され、定期的なコンテンツ更新が始まります
+            </li>
+            <li>
+              <strong>6ヶ月〜1年</strong>
+              ：AI検索での露出が向上し、問い合わせが増加し始めます
+            </li>
+            <li>
+              <strong>2年以降</strong>
+              ：持続的な集客基盤が確立し、顧客獲得コストが大幅に削減されます
+            </li>
+          </ul>
+          <p className="mt-2">時間とともに価値が増していく「資産型」の施策です。</p>
+        </>
+      ),
+    },
+    {
+      question: '従来のHP制作サービスとの違いは何ですか？',
+      answer: (
+        <>
+          <strong>A:</strong>{' '}
+          一般的なHP制作は「作って終わり」ですが、HERO AIVOは違います。
+          <ul className="list-disc list-inside mt-2 space-y-2">
+            <li>
+              <strong>LLMO・SEO完全対応</strong>の構造設計
+            </li>
+            <li>
+              自社開発ツールによる<strong>継続的なコンテンツ運用</strong>
+            </li>
+            <li>
+              <strong>広告費ゼロでも集客できる</strong>自走型サイト
+            </li>
+            <li>
+              <strong>月次診断</strong>で改善状況を数値で追える
+            </li>
+          </ul>
+          <p className="mt-2">
+            作るだけでなく、育て続けることで資産価値が高まります。
+          </p>
+        </>
+      ),
+    },
+    {
       question: '途中で解約できますか？契約期間の縛りはありますか？',
       answer: (
         <>
           <strong>A:</strong>{' '}
-          基本的に契約期間の縛りはありません。ただし、LLMO対策は継続的な運用で効果が積み上がる性質上、最低6ヶ月〜1年の継続をお勧めしています。短期間での解約も可能ですが、資産価値を十分に実感いただくためには中長期での運用が効果的です。
+          スタンダードプランは半年契約または1年契約、プレミアムプランは1年契約となります。LLMO対策は継続的な運用で効果が積み上がる性質上、最低半年〜1年の継続をお勧めしています。契約期間終了後は、継続・解約をお選びいただけます。
         </>
       ),
     },
@@ -162,14 +162,14 @@ export default function FAQSection() {
           <strong>A:</strong>
           <div className="mt-2 space-y-3">
             <div>
-              <strong>パターン1：LP制作の場合</strong>
+              <strong>【スタンダードプラン】LP制作の場合</strong>
               <br />
               既存HPはそのままで、新しいLPを追加します。集客の入口を増やすイメージです。
             </div>
             <div>
-              <strong>パターン2：HPリニューアルの場合</strong>
+              <strong>【プレミアムプラン】HP＋LP新規制作の場合</strong>
               <br />
-              既存HPを全面的にLLMO対応へリニューアルします。データや実績は引き継げます。
+              新規でHPとLPを制作します。
             </div>
             <p>御社の状況に応じて最適なプランをご提案します。</p>
           </div>

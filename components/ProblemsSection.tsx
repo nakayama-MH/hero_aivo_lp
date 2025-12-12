@@ -5,32 +5,31 @@ export default function ProblemsSection() {
     {
       title: (
         <>
-          Webサイトから
+          広告費が
           <br />
-          集客に繋がりにくい
+          かかり続ける
         </>
       ),
-      altText: 'Webサイトから集客に繋がりにくい',
+      altText: '広告費がかかり続ける',
       icon: '/問題1.png',
       bullets: [
-        'Webサイトが作って終わりになっている。',
-        'Webサイトへのアクセスが伸び悩んでいる。',
-        '集客効果が頭打ちになっている',
+        '高い広告費を出さないと、製品がなかなか売れない',
+        'Webサイトでの集客効果を実感できていない',
       ],
     },
     {
       title: (
         <>
-          AIに関する
+          Webサイトが
           <br />
-          知見が足りない
+          作って終わり
         </>
       ),
-      altText: 'AIに関する知見が足りない',
+      altText: 'Webサイトが作って終わり',
       icon: '/問題2.png',
       bullets: [
-        'AIで具体的に何をすればいいか分からない。',
-        '自社の情報をAIに誤って引用されることを防ぎ、正確に伝えてほしい。',
+        'せっかく作ったのに、アクセスが伸び悩んでいる',
+        'Webマーケティング自体が難しくて分からない',
       ],
     },
     {
@@ -44,8 +43,8 @@ export default function ProblemsSection() {
       altText: '顧客対応に時間とコストがかかる',
       icon: '/問題3.png',
       bullets: [
-        '営業やカスタマーサポートの負担が増加している。',
-        'Webサイトの情報が整理されておらず、顧客を逃している可能性がある。',
+        '営業やカスタマーサポートの負担が増加している',
+        'Webサイトで顧客に本当に伝えたいことを正確に伝えられているのかが分からない',
       ],
     },
   ]
@@ -55,8 +54,8 @@ export default function ProblemsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         {/* セクションタイトル */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 text-black">
-          <span className="whitespace-nowrap">こんな<span className="text-red-500">課題</span>は</span>
-          <span className="whitespace-nowrap">ありませんか？</span>
+          <span className="whitespace-nowrap">こんな<span className="text-red-500">もったいない</span>を</span>
+          <span className="whitespace-nowrap">していませんか？</span>
         </h2>
 
         {/* 問題カードグリッド */}
