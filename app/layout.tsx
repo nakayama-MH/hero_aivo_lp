@@ -138,6 +138,19 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-LVQ0RGMBVW"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LVQ0RGMBVW');
+          `}
+        </Script>
         <link rel="stylesheet" href="/chatbot/aivo-chatbot.css" />
         {/* JSON-LD構造化データ */}
         <StructuredData />
