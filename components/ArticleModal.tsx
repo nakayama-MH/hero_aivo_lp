@@ -50,31 +50,31 @@ export default function ArticleModal() {
       )}
 
       {/* モーダルコンテナ */}
-      <div className="fixed bottom-4 left-4 z-50 flex flex-col-reverse">
-        {/* 開閉ボタン */}
+      <div className="fixed bottom-[92px] sm:bottom-[104px] right-6 z-50 flex flex-col-reverse items-end">
+        {/* 開閉ボタン - 丸いブックアイコン */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={`
-            flex items-center justify-center gap-1.5 px-4 py-2
-            bg-gradient-to-r from-[#f62a2a] to-[#d91a1a]
-            text-white font-semibold rounded-full
-            shadow-md hover:shadow-lg hover:scale-[1.03]
+            w-14 h-14 sm:w-16 sm:h-16
+            flex items-center justify-center
+            bg-white text-[#f62a2a]
+            rounded-2xl
+            shadow-md hover:shadow-lg hover:scale-[1.05]
             active:scale-[0.97]
             transition-all duration-200
-            backdrop-blur-sm
             ${isOpen ? 'mt-3' : ''}
           `}
           aria-label={isOpen ? 'コラムを閉じる' : 'コラムを開く'}
         >
-          <span className="text-xs sm:text-sm tracking-wide">コラム</span>
+          {/* Heroicons book-open */}
           <svg
-            className={`w-3.5 h-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+            className="w-7 h-7 sm:w-8 sm:h-8"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            strokeWidth={3}
+            strokeWidth={1.5}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
           </svg>
         </button>
 
