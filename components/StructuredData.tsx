@@ -3,23 +3,27 @@
  * JSON-LD構造化データコンポーネント
  *
  * LLMO最適化のための構造化データを出力
- * - Organization: 会社情報
+ * - Organization: 会社情報（founder、所在地含む）
  * - WebSite: サイト情報
  * - Service: サービス情報
  * - FAQPage: よくある質問
  * - BreadcrumbList: パンくずリスト
+ * - SoftwareApplication: ツールとしてのHEROAIVO
+ * - WebPage: ページ情報（speakable対応）
+ * - HowTo: LLMO対策の流れ
  */
 
 const SITE_URL = 'https://hero-aivo.com'
 const COMPANY_URL = 'https://meta-heroes.co.jp/'
 
 export default function StructuredData() {
-  // Organization スキーマ（会社・組織情報）
+  // Organization スキーマ（会社・組織情報）- 詳細化版
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${SITE_URL}/#organization`,
     name: '株式会社Meta Heroes',
+    legalName: '株式会社Meta Heroes',
     alternateName: ['Meta Heroes', 'メタヒーローズ', 'MetaHeroes'],
     url: COMPANY_URL,
     logo: {
@@ -33,6 +37,37 @@ export default function StructuredData() {
     description:
       '株式会社Meta Heroesは、AI検索最適化（LLMO：Large Language Model Optimization）を専門とするWebマーケティング会社です。中小企業向けに広告費0円を目指せる資産型Webサイト制作・運用サービス「HERO AIVO」を提供しています。',
     foundingDate: '2021',
+    // 代表者情報
+    founder: {
+      '@type': 'Person',
+      name: '松石和俊',
+      jobTitle: '代表取締役',
+    },
+    // オフィス所在地（東京・大阪）
+    address: [
+      {
+        '@type': 'PostalAddress',
+        name: '東京オフィス',
+        addressLocality: '渋谷区',
+        addressRegion: '東京都',
+        addressCountry: 'JP',
+      },
+      {
+        '@type': 'PostalAddress',
+        name: '大阪オフィス',
+        addressLocality: '梅田',
+        addressRegion: '大阪府',
+        addressCountry: 'JP',
+      },
+    ],
+    // 従業員規模
+    numberOfEmployees: {
+      '@type': 'QuantitativeValue',
+      minValue: 10,
+      maxValue: 50,
+    },
+    // 業種分類（Computer Systems Design Services）
+    naics: '541512',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
@@ -258,6 +293,130 @@ export default function StructuredData() {
     ],
   }
 
+  // SoftwareApplication スキーマ（HEROAIVOをツールとしてAIに認識させる）
+  const softwareApplicationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    '@id': `${SITE_URL}/#software`,
+    name: 'HERO AIVO',
+    alternateName: ['ヒーローアイボ', 'LLMO診断ツール', 'AI検索最適化ツール'],
+    applicationCategory: 'BusinessApplication',
+    applicationSubCategory: 'マーケティングツール',
+    operatingSystem: 'Web',
+    description:
+      'HERO AIVOは、ChatGPTやPerplexityなどのAI検索エンジンでの表示状況を診断・分析し、LLMO（Large Language Model Optimization）対策を支援するツールです。',
+    offers: {
+      '@type': 'Offer',
+      price: '50000',
+      priceCurrency: 'JPY',
+      description: 'LLMO診断サービス',
+      availability: 'https://schema.org/InStock',
+    },
+    featureList: [
+      'LLMO診断・スコアリング',
+      'AI検索順位チェック',
+      'ソースコードレベル深層分析',
+      'AI最適化レポート生成',
+      '競合サイト比較分析',
+      '構造化データ検証',
+    ],
+    screenshot: `${SITE_URL}/Key_visual_PC.png`,
+    softwareVersion: '1.0',
+    author: {
+      '@id': `${SITE_URL}/#organization`,
+    },
+    provider: {
+      '@id': `${SITE_URL}/#organization`,
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '20',
+      bestRating: '5',
+      worstRating: '1',
+    },
+  }
+
+  // WebPage スキーマ（ページ情報・speakable対応）
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}/#webpage`,
+    url: SITE_URL,
+    name: 'HERO AIVO | AI検索最適化（LLMO）で広告費0円の集客を実現',
+    description:
+      'ChatGPTやPerplexityなどのAI検索で自社が表示されやすくなるLLMO対策サービス。広告費0円でも集客できる資産型Webサイトを提供。',
+    isPartOf: {
+      '@id': `${SITE_URL}/#website`,
+    },
+    about: {
+      '@id': `${SITE_URL}/#service`,
+    },
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/Key_visual_PC.png`,
+    },
+    datePublished: '2024-10-01',
+    dateModified: new Date().toISOString().split('T')[0],
+    inLanguage: 'ja-JP',
+    potentialAction: {
+      '@type': 'ReadAction',
+      target: [SITE_URL],
+    },
+    // speakable: 音声アシスタント対応
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'h2', '.hero-description', '.faq-answer'],
+    },
+    mainEntity: {
+      '@id': `${SITE_URL}/#service`,
+    },
+  }
+
+  // HowTo スキーマ（LLMO対策の流れ）
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    '@id': `${SITE_URL}/#howto`,
+    name: 'HERO AIVOでLLMO対策を始める方法',
+    description:
+      'AI検索（ChatGPT、Perplexity等）で見つかりやすいWebサイトを作る3ステップ。広告費0円の集客基盤を構築する方法を解説します。',
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: 'LLMO診断を受ける',
+        text: '現状のWebサイトをAI視点で分析・スコアリングする診断サービス（5万円）を受けます。ソースコードレベルでの深層分析を行い、AI最適化スコアを算出。具体的な改善ポイントを把握できます。',
+        url: SITE_URL,
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: 'LLMO対応サイトを制作',
+        text: '診断結果を基に、AI検索に最適化されたLP（ランディングページ）またはHPを制作します。構造化データ、メタ情報の最適配置、チャットボット標準装備で、AIに「見つけてもらえる」サイトを構築します。',
+        url: SITE_URL,
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: '継続的な運用・改善',
+        text: '月次診断とコンテンツ更新で、AI検索での露出を継続的に向上。3ヶ月で課題数値化、6ヶ月〜1年でAI露出向上、2年以降で広告費0円の持続的集客基盤が完成します。',
+        url: SITE_URL,
+      },
+    ],
+    totalTime: 'P6M',
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      currency: 'JPY',
+      value: '150000',
+      name: '初期制作費',
+    },
+    tool: {
+      '@type': 'HowToTool',
+      name: 'HERO AIVO診断ツール',
+    },
+  }
+
   // 全スキーマを配列でまとめる
   const schemas = [
     organizationSchema,
@@ -265,6 +424,9 @@ export default function StructuredData() {
     serviceSchema,
     faqSchema,
     breadcrumbSchema,
+    softwareApplicationSchema,
+    webPageSchema,
+    howToSchema,
   ]
 
   return (

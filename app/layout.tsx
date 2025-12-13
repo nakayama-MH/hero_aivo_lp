@@ -66,7 +66,10 @@ export const metadata: Metadata = {
   // === 正規URL設定 ===
   metadataBase: new URL(SITE_URL),
   alternates: {
-    canonical: '/',
+    canonical: SITE_URL,
+    languages: {
+      'ja-JP': SITE_URL,
+    },
   },
 
   // === OGP（Open Graph Protocol）設定 ===
@@ -114,9 +117,21 @@ export const metadata: Metadata = {
 
   // === その他のカスタムメタタグ ===
   other: {
+    // Apple PWA対応
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'default',
     'apple-mobile-web-app-title': SITE_NAME,
+    // AI・LLMO最適化メタタグ
+    'ai-content-declaration': 'human-authored',
+    'content-language': 'ja',
+    // 地理情報（ローカルSEO対応）
+    'geo.region': 'JP',
+    'geo.placename': 'Tokyo, Japan',
+    'geo.position': '35.6762;139.6503',
+    'ICBM': '35.6762, 139.6503',
+    // ビジネス情報
+    'business:contact_data:locality': 'Shibuya, Tokyo',
+    'business:contact_data:country_name': 'Japan',
   },
 }
 
@@ -138,6 +153,12 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        {/* DNS Prefetch & Preconnect - パフォーマンス最適化 */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://images.microcms-assets.io" />
+        <link rel="preconnect" href="https://images.microcms-assets.io" crossOrigin="anonymous" />
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-LVQ0RGMBVW"
