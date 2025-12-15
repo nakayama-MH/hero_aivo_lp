@@ -2,11 +2,8 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useContactModal } from '@/contexts/ContactModalContext'
 
 export default function Header() {
-  const { openModal } = useContactModal()
-
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
       <div className="w-full">
@@ -26,13 +23,16 @@ export default function Header() {
           </div>
 
           {/* 右側：無料相談ボタン */}
-          <div>
-            <button
-              onClick={openModal}
-              className="bg-[#f62a2a] hover:bg-[#d92424] text-white font-bold py-2 px-4 text-base sm:py-3 sm:px-8 sm:text-lg rounded-full transition-colors duration-200"
+          <div className="flex-shrink-0">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 bg-[#f62a2a] hover:bg-[#d92424] text-white font-bold py-2 px-4 md:py-2.5 md:px-6 text-sm md:text-base rounded-full transition-colors whitespace-nowrap"
             >
               無料相談
-            </button>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>

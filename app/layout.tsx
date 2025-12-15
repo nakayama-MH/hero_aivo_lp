@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import './globals.css'
-import { ContactModalProvider } from '@/contexts/ContactModalContext'
-import ContactModal from '@/components/ContactModal'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
@@ -153,6 +151,22 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        {/* フォントPreload - Core Web Vitals最適化 */}
+        <link
+          rel="preload"
+          href="/fonts/LINESeedJP_20241105/Web/WOFF2/LINESeedJP_OTF_Rg.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/LINESeedJP_20241105/Web/WOFF2/LINESeedJP_OTF_Bd.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+
         {/* DNS Prefetch & Preconnect - パフォーマンス最適化 */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
@@ -177,14 +191,11 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body>
-        <ContactModalProvider>
-          <Header />
-          <div className="min-h-screen flex flex-col">
-            {children}
-          </div>
-          <Footer />
-          <ContactModal />
-        </ContactModalProvider>
+        <Header />
+        <div className="min-h-screen flex flex-col">
+          {children}
+        </div>
+        <Footer />
 
         {/* AIVO Chatbot */}
         <Script src="/chatbot/aivo-chatbot.js" strategy="lazyOnload" />

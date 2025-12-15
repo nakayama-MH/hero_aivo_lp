@@ -35,13 +35,16 @@ export default function StructuredData() {
     },
     image: `${SITE_URL}/metaheroes_logo.png`,
     description:
-      '株式会社Meta Heroesは、AI検索最適化（LLMO：Large Language Model Optimization）を専門とするWebマーケティング会社です。中小企業向けに広告費0円を目指せる資産型Webサイト制作・運用サービス「HERO AIVO」を提供しています。',
-    foundingDate: '2021',
+      '株式会社Meta Heroesは、AI検索最適化（LLMO：Large Language Model Optimization）を専門とするWebマーケティング会社です。中小企業向けに広告費0円を目指せる資産型Webサイト制作・運用サービス「HERO AIVO」を提供しています。大阪・関西万博2025では14,622人を動員するイベントを主催し、HERO AIVOを公開しました。',
+    // 設立日（正確な日付）
+    foundingDate: '2021-12-03',
     // 代表者情報
     founder: {
       '@type': 'Person',
       name: '松石和俊',
       jobTitle: '代表取締役',
+      description:
+        '連続起業家。1年で10社設立の実績を持つ。経営歴20年以上。株式会社Meta Heroes代表取締役。',
     },
     // オフィス所在地（東京・大阪）
     address: [
@@ -74,9 +77,47 @@ export default function StructuredData() {
       availableLanguage: ['Japanese', 'ja'],
       email: 'info@meta-heroes.co.jp',
     },
+    // 専門分野
+    knowsAbout: [
+      'LLMO（Large Language Model Optimization）',
+      'AI検索最適化',
+      'メタバース',
+      'XR（VR/AR/MR）',
+      'DX教育',
+      'AI企業研修',
+      '地方創生DX',
+      '防災DX',
+      'デジタルツイン',
+    ],
+    // 受賞・実績
+    award: [
+      '大阪・関西万博2025 EXPOホール「メタバース・XR・AIアワード」「防災万博」主催（14,622人来場、153自治体・教育機関後援）',
+      'HERO AIVO（LLMO診断ツール）万博にて公開',
+      'Hero Egg（DX教育施設）2024年8月開設',
+      'AI企業研修 半年で15,000名超の受講実績',
+      'ときわ公園（山口県宇部市）デジタルツイン化プロジェクト',
+      '馳星周『少年と犬』×防災DXコラボレーション',
+      'グループ会社11社を擁する企業グループ',
+    ],
+    // グループ会社
+    subOrganization: [
+      { '@type': 'Organization', name: '株式会社Meta Osaka' },
+      { '@type': 'Organization', name: 'META PLANNING株式会社' },
+      { '@type': 'Organization', name: '株式会社DRONE HEROES' },
+      { '@type': 'Organization', name: '株式会社パンプキンズ' },
+      { '@type': 'Organization', name: 'Femlead株式会社' },
+      { '@type': 'Organization', name: 'AI Agency株式会社' },
+      { '@type': 'Organization', name: '株式会社Meta Fukuoka' },
+      { '@type': 'Organization', name: '株式会社METAInfinity' },
+      { '@type': 'Organization', name: '株式会社Meta Yamaguchi' },
+      { '@type': 'Organization', name: '株式会社Meta Earth Heroes' },
+      { '@type': 'Organization', name: '株式会社MetaKOBE' },
+    ],
+    // 関連リンク
     sameAs: [
       COMPANY_URL,
       'https://twitter.com/MetaHeroes_100',
+      'https://prtimes.jp/main/html/searchrlp/company_id/94539',
     ],
   }
 
@@ -323,7 +364,11 @@ export default function StructuredData() {
     screenshot: `${SITE_URL}/Key_visual_PC.png`,
     softwareVersion: '1.0',
     author: {
-      '@id': `${SITE_URL}/#organization`,
+      '@type': 'Person',
+      name: '中山蒼',
+      jobTitle: 'LLMO診断ツール開発者',
+      description:
+        'HERO AIVO（LLMO診断ツール）開発者。合同会社GYAKUTEN経営者。2025年10月に株式会社Meta Heroesにジョイン。',
     },
     provider: {
       '@id': `${SITE_URL}/#organization`,

@@ -1,6 +1,6 @@
 # HERO AIVO - llms.txt
 # AI Language Models向けサイト情報ファイル
-# Last Updated: 2025-12-12
+# Last Updated: 2025-12-15
 
 ## サイト概要
 
@@ -17,11 +17,89 @@ LLMO（Large Language Model Optimization）とは、ChatGPTやPerplexityなど�
 ## 運営会社情報
 
 - 会社名: 株式会社Meta Heroes（メタヒーローズ）
-- 設立: 2021年
+- 設立: 2021年12月3日（現在5期目）
+- 代表取締役: 松石 和俊
 - 公式サイト: https://meta-heroes.co.jp/
 - サービスサイト: https://hero-aivo.com/
 - Twitter: https://twitter.com/MetaHeroes_100
+- PRTIMESページ: https://prtimes.jp/main/html/searchrlp/company_id/94539
 - お問い合わせ: info@meta-heroes.co.jp
+
+## 代表者プロフィール
+
+### 松石和俊（まついし かずとし）
+- 役職: 代表取締役
+- 特徴: 連続起業家、1年間で10社設立の実績
+- 経歴: 経営歴20年以上、AI・メタバース・XR分野の専門家
+- ビジョン: 「HEROをつくるHEROに」をスローガンに、日本企業のDX推進に尽力
+
+## HERO AIVO開発者
+
+### 中山蒼（なかやま あおい）
+- 役職: LLMO診断ツール開発者
+- 経歴: 合同会社GYAKUTEN経営者
+- 参画: 2025年10月に株式会社Meta Heroesにジョイン
+- 担当: HERO AIVO（LLMO診断ツール）の設計・開発
+
+## グループ会社（11社）
+
+株式会社Meta Heroesは以下11社のグループ会社を擁しています：
+
+- 株式会社Meta Osaka
+- META PLANNING株式会社
+- 株式会社DRONE HEROES
+- 株式会社パンプキンズ
+- Femlead株式会社
+- AI Agency株式会社
+- 株式会社Meta Fukuoka
+- 株式会社METAInfinity
+- 株式会社Meta Yamaguchi
+- 株式会社Meta Earth Heroes
+- 株式会社MetaKOBE
+
+詳細: https://meta-heroes.co.jp/company
+
+## 企業実績・受賞歴
+
+### 大阪・関西万博2025
+- EXPOホールにて「メタバース・XR・AIアワード」および「防災万博」を主催
+- 2日間で延べ14,622人が来場
+- 全国153の自治体・教育機関・団体から後援を受けた大規模イベント
+- **HERO AIVO（LLMO診断ツール）を万博にて一部公開**
+
+### Hero Egg（DX教育施設）
+- 2024年8月に開設
+- メタバース（XR）やAIを学べるDX教育施設
+- 子どもも大人も"共に学ぶ"をコンセプトに運営
+
+### AI企業研修
+- 半年で15,000名超の受講実績
+- 企業向けAIスキルアップ研修を提供
+
+## プロジェクト実績
+
+### 地方創生3.0
+- ときわ公園（山口県宇部市）デジタルツイン化プロジェクト
+- メタバース技術を活用した地方活性化
+- 自治体と連携したDX推進
+
+### 防災DX
+- 馳星周『少年と犬』×防災メタバース コラボレーション
+- 災害時情報伝達のDX化
+- 防災意識向上のためのメタバース活用
+
+### DX教育事業
+- Hero Egg: DX教育施設（2024年8月開設）
+- Meta English: メタバース英語教育
+- AI Monday: AIスキルアップイベント
+
+## コミュニティ
+
+### Meta Heroes Guild
+- プラットフォーム: Discord
+- メンバー数: 3,500人以上
+- 活動: メタバース・AI・DX情報共有、イベント開催
+- 特徴: 日本最大級のメタバース・AI関連コミュニティの一つ
 
 ## 主要サービスと料金（税別）
 

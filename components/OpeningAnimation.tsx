@@ -13,11 +13,23 @@ type Particle = {
   color: string
 }
 
+const STORAGE_KEY = 'heroaivo_opening_shown'
+
 export default function OpeningAnimation() {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
   const [particles, setParticles] = useState<Particle[]>([])
 
   useEffect(() => {
+    // 既にアニメーションを表示済みかチェック
+    const hasShown = sessionStorage.getItem(STORAGE_KEY)
+    if (hasShown) {
+      return // 表示済みなら何もしない
+    }
+
+    // 初回アクセス時のみ表示
+    setIsVisible(true)
+    sessionStorage.setItem(STORAGE_KEY, 'true')
+
     // クライアント側でマウント後に光の粒を生成
     setParticles(
       Array.from({ length: 50 }, (_, i) => ({

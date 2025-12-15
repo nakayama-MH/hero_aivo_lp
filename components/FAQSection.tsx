@@ -257,43 +257,69 @@ export default function FAQSection() {
   }
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-[#fce7e7]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-4xl mx-auto px-6 md:px-8">
         {/* セクションタイトル */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-black">
-          よくある質問
-        </h2>
+        <div className="text-center mb-14 md:mb-16">
+          <p className="text-[#f62a2a] font-medium text-sm md:text-base tracking-wider mb-3">
+            FAQ
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+            よくある質問
+          </h2>
+        </div>
 
         {/* FAQ Items */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-sm transition-shadow hover:shadow-md"
+              className={`bg-white rounded-2xl overflow-hidden border transition-all duration-200 ${
+                openIndex === index
+                  ? 'border-[#f62a2a]/20 shadow-lg shadow-red-500/5'
+                  : 'border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200'
+              }`}
             >
               {/* Question Button */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full text-left px-6 sm:px-8 py-5 sm:py-6 flex items-center justify-between gap-4 transition-colors hover:bg-gray-50"
+                className="w-full text-left px-4 md:px-8 py-4 md:py-6 flex items-start gap-3 md:gap-4 transition-colors"
               >
-                <span className="text-lg sm:text-xl font-bold text-black flex-1">
-                  Q {faq.question}
+                <span className={`flex-shrink-0 w-6 h-6 md:w-8 md:h-8 rounded-lg flex items-center justify-center text-xs md:text-sm font-bold transition-colors ${
+                  openIndex === index
+                    ? 'bg-[#f62a2a] text-white'
+                    : 'bg-gray-100 text-gray-500'
+                }`}>
+                  Q
                 </span>
-                <span className="text-2xl sm:text-3xl text-[#f62a2a] font-bold flex-shrink-0">
-                  {openIndex === index ? '−' : '+'}
+                <span className="text-sm md:text-lg font-bold text-gray-900 flex-1 pt-0.5 md:pt-1">
+                  {faq.question}
+                </span>
+                <span className={`flex-shrink-0 w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center transition-all duration-200 ${
+                  openIndex === index
+                    ? 'bg-[#f62a2a] text-white rotate-180'
+                    : 'bg-gray-100 text-gray-500'
+                }`}>
+                  <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </span>
               </button>
 
               {/* Answer */}
               <div
-                className={`transition-all duration-300 ease-in-out ${
+                className={`grid transition-all duration-300 ease-in-out ${
                   openIndex === index
-                    ? 'max-h-[2000px] opacity-100'
-                    : 'max-h-0 opacity-0'
+                    ? 'grid-rows-[1fr] opacity-100'
+                    : 'grid-rows-[0fr] opacity-0'
                 }`}
               >
-                <div className="px-6 sm:px-8 pb-5 sm:pb-6 text-base sm:text-lg text-gray-800 leading-relaxed border-t border-gray-200">
-                  <div className="pt-4">{faq.answer}</div>
+                <div className="overflow-hidden">
+                  <div className="px-4 md:px-8 pb-4 md:pb-8 text-xs md:text-base text-gray-700 leading-relaxed">
+                    <div className="pl-8 md:pl-12 pt-2 border-l-2 border-[#f62a2a]/20 ml-2 md:ml-4">
+                      {faq.answer}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

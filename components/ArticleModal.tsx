@@ -50,7 +50,7 @@ export default function ArticleModal() {
       )}
 
       {/* モーダルコンテナ */}
-      <div className="fixed bottom-[92px] sm:bottom-[104px] right-6 z-50 flex flex-col-reverse items-end">
+      <div className="fixed bottom-[92px] sm:bottom-[104px] right-6 z-50 flex flex-col-reverse items-end pointer-events-none">
         {/* 開閉ボタン - 丸いブックアイコン */}
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -62,6 +62,7 @@ export default function ArticleModal() {
             shadow-md hover:shadow-lg hover:scale-[1.05]
             active:scale-[0.97]
             transition-all duration-200
+            pointer-events-auto
             ${isOpen ? 'mt-3' : ''}
           `}
           aria-label={isOpen ? 'コラムを閉じる' : 'コラムを開く'}
@@ -84,7 +85,7 @@ export default function ArticleModal() {
             bg-white rounded-2xl shadow-2xl overflow-hidden
             transition-all duration-300 ease-out
             ${isOpen
-              ? 'opacity-100 scale-100 translate-y-0'
+              ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
               : 'opacity-0 scale-95 translate-y-4 pointer-events-none'
             }
           `}
