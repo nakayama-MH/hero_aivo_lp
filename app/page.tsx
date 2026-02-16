@@ -10,7 +10,6 @@ import CTASection from '@/components/CTASection'
 import OpeningAnimation from '@/components/OpeningAnimation'
 import ArticleModal from '@/components/ArticleModal'
 
-// Triggered via GitHub API for Verified Commit
 export default function Home() {
   return (
     <>
