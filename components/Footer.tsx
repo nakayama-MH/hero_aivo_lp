@@ -70,7 +70,7 @@ export default function Footer() {
 
         {/* コピーライト */}
         <div className="text-center text-xs text-gray-500">
-          © 2021-2025 Meta Heroes, Inc. All Rights Reserved
+          © 2021-2026 Meta Heroes, Inc. All Rights Reserved
         </div>
       </div>
     </footer>
